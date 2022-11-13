@@ -1,0 +1,181 @@
+html,
+* {
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+picture{
+    width: 100%;
+    height: 10%;
+    max-width:100%;
+    max-height:50%;
+}
+
+img {
+    border-radius: 1vh;
+    flex-shrink: 0;
+    width: 100%;
+    max-height:50%;
+    min-height:50%;
+}
+
+#gallery {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.cityContainer {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1vh;
+    text-align: left;
+
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    height: calc(85% - 2vh);
+    min-width: 400px;
+    min-height: 750px;
+}
+
+@media (max-width:1050px) {
+    .cityContainer {
+        width: calc(100%);
+        flex-shrink: 0;
+        flex-grow: 0;
+        align-self: center;
+        margin: 10px;
+    }
+
+    #gallery {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    .cityContainer > div{
+        align-self: center;
+        flex-basis: 50vh;
+        position: relative;
+        resize: none;
+        min-width: 400px;
+        min-height: 600px;
+    }
+
+
+}
+
+@media (min-width:1050px) and (max-width:1650px) {
+    .cityContainer {
+        width: calc(50% - 2vh);
+    }
+
+    #gallery {
+        flex-wrap: wrap;
+    }
+
+    .cityContainer > div{
+        align-self: center;
+        flex-basis: 50vh;
+        position: relative;
+        resize: none;
+    }
+}
+
+@media (min-width:1650px) {
+    .cityContainer {
+        width: calc(33% - 2vh);
+    }
+
+    #gallery {
+        flex-wrap: wrap;
+    }
+
+    .cityContainer > div{
+        align-self: center;
+        flex-basis: 50vh;
+        position: relative;
+        resize: none;
+    }
+}
+
+.cityContainer>div {
+    height: 100%;
+    width: 50vh;
+    border: 1px solid black;
+    border-radius: 1vh;
+    box-shadow: 0.5vh 0.5vh 5vh;
+    min-width: 400px;
+    min-height: 600px;
+}
+
+.cityContainer>div>h1 {
+    height: 7%;
+    padding-left: 0.5em;
+}
+
+.cityContainer>div>h3 {
+    height: 7%;
+    padding-left: 1em;
+}
+
+.cityContainer>div>p {
+    height: 20%;
+    padding-left: 1em;
+    margin-right: 3em;
+}
+
+.cityContainer>div>button {
+    display: inline;
+    height: 7%;
+    width: 28%;
+    text-decoration: none;
+    border: none;
+    text-align: center;
+    margin-left: 1em;
+    background-color: red;
+    color: white;
+    font-size: medium;
+}
+
+.cityContainer>div>button:hover {
+    display: inline;
+    height: 7%;
+    width: 28%;
+    text-decoration: none;
+    border: none;
+    text-align: center;
+    margin-left: 1em;
+    background-color: gray;
+    color: white;
+    font-size: medium;
+}
+
+.cityContainer>div>hr {
+    height: 1px;
+    margin-bottom: 2em;
+    opacity: 0.1;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.text2 {
+    display: inline-block;
+    float: right;
+    width: 50%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+.material-symbols-outlined {
+    height: 6%;
+  }

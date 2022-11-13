@@ -1,0 +1,10 @@
+body, html{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background-image: linear-gradient(rgba(57, 187, 216, 0.5),rgba(57, 187, 216, 0.5)),
+    url("bg.jpg");
+}
