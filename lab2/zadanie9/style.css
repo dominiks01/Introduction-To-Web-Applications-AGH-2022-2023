@@ -1,0 +1,232 @@
+html,
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(-3deg, white, white 14.4%, #057aec 14.5%, #057aec);
+}
+
+
+@keyframes fromLeftToRight {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes fromRightToLeft {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+article {
+    width: 50%;
+    height: 70%;
+    float: left;
+    animation: fromLeftToRight 1.5s ease-out;
+}
+
+aside {
+    width: 40%;
+    height: 100%;
+    float: left;
+    animation: fromRightToLeft 1.5s ease-out;
+}
+
+article {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+article h1 {
+    font-size: 60px;
+    line-height: 3em;
+    display: block;
+}
+
+
+article p {
+    line-height: 1.6em;
+}
+
+article button {
+    width: 30%;
+    height: 7%;
+    background-color: #057aec;
+    border-radius: 6px;
+    border: 1px solid white;
+    color: white;
+    font-size: 19px;
+    margin-top: 5%;
+    min-height: 50px;
+    min-width: 150px;
+}
+
+aside .formContent {
+    height: 60%;
+    width: 60%;
+    margin-top: 20%;
+    background-color: white;
+    margin-left: 10%;
+    border-radius: 1em;
+    box-shadow: 0.1vh 0.1vh 1vh;
+}
+
+.formContent {
+    padding: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.formContent p {
+    font-size: 30px;
+    color: gray;
+    margin-top: 10%;
+}
+
+.formContent input {
+    font-size: 25px;
+    color: gray;
+    border-bottom: 1px solid gray;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.formContent input {
+    font-size: 25px;
+    color: gray;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.formContent input:focus {
+    outline: none;
+}
+
+.formContent button {
+    height: 14%;
+    width: 40%;
+    background-color: #057aec;
+    color: white;
+    border-radius: 1vh;
+    font-size: 23px;
+}
+
+@media (max-width:1106px) {
+    article {
+        margin: 0px;
+        width: 100%;
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    aside {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        margin-top: 0;
+    }
+
+    article {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    article h1 {
+        font-size: 50px;
+        text-align: center;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    article p {
+        line-height: 1.6em;
+        text-align: justify;
+        margin-left: 10vh;
+        margin-right: 10vh;
+    }
+
+    article button {
+        width: 30%;
+        height: 7%;
+        background-color: #057aec;
+        border-radius: 6px;
+        border: 1px solid white;
+        color: white;
+        font-size: 19px;
+        min-height: 50px;
+        min-width: 150px;
+        margin-top: 5px;
+    }
+
+    aside .formContent {
+        height: 60%;
+        width: 60%;
+        background-color: white;
+        margin-top: 20px;
+        border-radius: 1em;
+        box-shadow: 0.1vh 0.1vh 1vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 0;
+    }
+
+
+    .formContent p {
+        font-size: 30px;
+        color: gray;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .formContent input {
+        font-size: 25px;
+        color: gray;
+        border-bottom: 1px solid gray;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .formContent input {
+        font-size: 25px;
+        color: gray;
+        border: none;
+        border-bottom: 1px solid gray;
+    }
+
+    .formContent input:focus {
+        outline: none;
+    }
+
+    .formContent button {
+        height: 14%;
+        width: 40%;
+        margin-left: 30%;
+        background-color: #057aec;
+        color: white;
+        border-radius: 1vh;
+        font-size: 23px;
+    }
+}

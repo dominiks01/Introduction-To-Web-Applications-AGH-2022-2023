@@ -1,0 +1,98 @@
+html,
+body {
+    width: 100%;
+    height: 200%;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: blanchedalmond;
+}
+
+#mainContent {
+    margin: 5px;
+    width: calc(100% - 10px);
+    height: 530px;
+    background-color: #002a42;
+    border-radius: 8px;
+    position: relative;
+    min-width: 852px;
+}
+
+#mainScreen {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#camera {
+    height: 100%;
+}
+
+#caller img {
+    position: absolute;
+    border-radius: 10px;
+    left: 15px;
+    top: 15px;
+}
+
+#controls {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content: center;
+    gap: 30px;
+    top: 450px;
+}
+
+.iconContener {
+    background-color: white;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1vh 0.5vh 1vh;
+}
+
+.iconContener:last-of-type {
+    background-color: red;
+}
+
+.iconContener:last-of-type:hover {
+    background-color: darkred;
+}
+
+
+.iconContener:hover {
+    background-color: bisque;
+    cursor: pointer;
+}
+
+#leftPanel {
+    position: absolute;
+    width: 15px;
+    height: 120px;
+    top: 350px;
+    left: 15px;
+    background-color: azure;
+    border-radius: 12px;
+}
+
+#leftPanel ul {
+    margin-left: -13px;
+    margin-top: 1px;
+    font-size: 30px;
+    line-height: 18px;
+    color: gray;
+}
+
+.check:checked li {
+    color: rgb(23, 116, 174);
+}
+
+
+#leftPanel ul li:hover {
+    color: rgb(23, 116, 174);
+}
