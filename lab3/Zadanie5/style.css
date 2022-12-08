@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: antiquewhite;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#gameContainer {
+    width: 60vh;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+
+#dartBoard {
+    width: 50vh;
+    height: 50vh;
+    background-color: antiquewhite;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    float: left;
+    margin-left: 10vh;
+    margin-top: 10vh;
+    float: left;
+}
+
+#firstCircle {
+    width: 100%;
+    height: 100%;
+    background-color: #e4e6fb;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#secondCircle {
+    width: 35vh;
+    height: 35vh;
+    border-radius: 50%;
+    background-color: red;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+#thirdCircle {
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    background-color: yellow;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pointsInfo {
+    top: -6vh;
+    position: relative;
+    font-size: 40px;
+    height: 0;
+}
+
+#log {
+    width: calc(100% - 60vh);
+    height: 100%;
+    float: left;
+}
+
+#controls {
+    width: 50vh;
+    height: calc(100% - 70vh);
+    display: flex;
+    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10vh;
+    justify-content: space-around;
+}
+
+.gameScore {
+    height: 10vh;
+    width: 10vh;
+    border: 5px solid red;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#gameScore p {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#controls button {
+    width: 50%;
+    height: 15%;
+    font-size: 20px;
+}
+
+.disabled {
+    background-color: gray !important;
+}
+
+#log p {
+    margin-left: 20vh;
+    font-size: 20px;
+    font-weight: 900;
+}
