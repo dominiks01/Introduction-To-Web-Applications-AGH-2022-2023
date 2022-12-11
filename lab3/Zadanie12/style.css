@@ -1,0 +1,59 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+#game {
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    min-height: 800px;
+    overflow: hidden;
+    background-image: url("images/board-bg.jpg");
+    background-repeat: no-repeat;
+    cursor: url("images/pointerCS.png"), auto;
+    position: relative;
+    background-size: cover;
+}
+
+#score {
+    width: 20vh;
+    position: absolute;
+    font-size: 100px;
+    color: white;
+    font-weight: bolder;
+    font-family: fantasy;
+    right: 10%;
+}
+
+.zombie {
+    /* // left: 110%; */
+    bottom: 100px;
+    background-image: url("images/walkingdead.png");
+    animation: back 0.5s steps(10, end) infinite;
+    background-size: cover;
+    width: 200px;
+    height: 312px;
+    position: absolute;
+}
+
+@keyframes back {
+
+    0% {
+        background-position-x: 2000px;
+    }
+}
+
+@keyframes walk {
+    0% {
+        transform: translateX(-450%);
+    }
+
+    100% {
+        transform: translateX(450%);
+    }
+}

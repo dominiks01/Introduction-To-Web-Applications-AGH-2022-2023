@@ -1,0 +1,76 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: blanchedalmond;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#content {
+    margin: 5vh;
+    padding: 5vh;
+    position: absolute;
+    width: 40vh;
+    height: 50vh;
+    background-color: aliceblue;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.passwordLabel {
+    font-size: 20px;
+    margin-bottom: 1vh;
+}
+
+#submitButton {
+    margin-top: 2vh;
+    height: 5vh;
+    width: 30vh;
+}
+
+.inputPassword {
+    padding-left: 1vh;
+    padding-right: 4vh;
+    height: 5vh;
+    width: 30vh;
+    border-radius: 1px;
+    border: none;
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+.requirement {
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    gap: 1vh;
+}
+
+.passwordContainer i {
+    position: absolute;
+    right: 15%;
+    margin-top: 1.9vh;
+}
+
+.gg-check-o {
+    color: black;
+}
+
+.error {
+    height: 0;
+    color: red;
+}
+
+.nonError {
+    display: none;
+}

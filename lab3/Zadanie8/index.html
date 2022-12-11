@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://css.gg/check-o.css' rel='stylesheet'>
+    <link href='https://css.gg/close-o.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/9ddfbfd401.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="content">
+        <div class="passwordContainer">
+            <p class="passwordLabel">New password</p>
+            <input type="password" id="passwordFirst" class="inputPassword"><i class="fa-solid fa-eye" id="passwordFirstShow"></i>
+        </div>
+        <div class="passwordContainer">
+            <p class="passwordLabel">Repeat new password</p>
+            <input type="password" id="passwordRepeated" class="inputPassword"><i class="fa-solid fa-eye" id="passwordSecondShow"></i>
+            <p id="logRepeated" class="nonError">Hasła się nie zgadzają</p>
+        </div>
+        <div>
+            <h2>Password requirements</h2>
+            <div class="requirement">
+                <i class="gg-check-o"></i>
+                <p>at least 8 characters</p>
+            </div>
+            <div class="requirement">
+                <i class="gg-check-o"></i>
+                <p>at least one special character</p>
+            </div>
+            <div class="requirement">
+                <i class="gg-check-o"></i>
+                <p>at least one capital letter</p>
+            </div>
+            <div class="requirement">
+                <i class="gg-check-o"></i>
+                <p>at least one digit</p>
+            </div>
+
+            <button type="button" id="submitButton" disabled>USTAW</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
