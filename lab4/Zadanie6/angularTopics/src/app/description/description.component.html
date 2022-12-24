@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="options">
+    <ng-container *ngIf="chosenBasics">
+      ?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus corporis illum atque repudiandae sunt quasi
+    </ng-container>
+
+    <ng-container *ngIf="chosenComponents">
+      ?Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+    </ng-container>
+
+    <ng-container *ngIf="chosenEvents">
+      ?Lorem ipsum dolor sit amet.
+    </ng-container>
+  </div>
+  <app-topics (messageEvent)="receiveMessage($event)"></app-topics>
+</div>

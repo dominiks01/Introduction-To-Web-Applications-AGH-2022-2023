@@ -1,0 +1,37 @@
+<div id="container">
+  <h3>Wybierz markę samochodu</h3>
+
+  <select [(ngModel)]="selectedCompany"(ngModelChange)="chosenCompany()">
+    <ng-container *ngIf="showCompanies">
+      <option disabled selected style="display:none"></option>
+      <option *ngFor="let company of carData | keyvalue">
+        {{ company.key }}
+      </option>
+    </ng-container>
+
+  </select>
+  <h3>Wybierz model samochodu</h3>
+  <select [(ngModel)]="selectedModel" (ngModelChange)="chosenModel()">
+    <ng-container *ngIf="showModels">
+      <option disabled selected style="display:none"></option>
+      <option *ngFor="let model of carData[selectedCompany] | keyvalue">
+        {{ model.key }}
+      </option>
+    </ng-container>
+  </select>
+
+  <h3>Wybierz kolor samochodu</h3>
+  <select [(ngModel)]="selectedColor" (ngModelChange)="chosenColor()" class="colors">
+    <ng-container *ngIf="showColors">
+      <option disabled selected style="display:none"></option>
+      <option *ngFor="let color of colorChoose"  [style.background-color]="enumToString(color)">
+        {{ color  }}
+      </option>
+    </ng-container>
+  </select>
+
+  <p *ngIf="showCar">Twój wybór to:<br><b>{{selectedCompany + " " + selectedModel }}</b></p>
+  <p *ngIf="showCar">Kolor:<br><b>{{selectedColor}}</b></p>
+  <p *ngIf="showCar">Dodatkowe wyposażenie:<br><ul *ngFor="let item of equipment"><li>{{item}}</li></ul><br></p>
+
+</div>

@@ -1,0 +1,79 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.parent {
+  display: grid;
+grid-template-columns: 2vh repeat(2, 1fr) 2vh;
+grid-template-rows: 30vh repeat(4, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 5; }
+.div2 { grid-area: 2 / 2 / 6 / 4; }
+
+.div1 {
+  position: relative;
+}
+
+.div2 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 6vh;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+.basket{
+  position: absolute;
+  right: 0;
+  bottom: 20%;
+  height: 20%;
+  width: 20%;
+  min-height: 50px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: row;
+}
+
+.basket fa-icon {
+  position: inherit;
+}
+
+.basket div {
+  position: inherit;
+  right: 30%;
+  font-size: 40px;
+}
+
+.tripCounter{
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  height: 20%;
+  width: 25%;
+  min-height: 50px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: row;
+  background-color: aqua;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+}
+
+.tripCounerFirstBackground{
+  background-color: lightgreen;
+}
+
+.tripCounerSecondBackground{
+  background-color: lightcoral;
+}

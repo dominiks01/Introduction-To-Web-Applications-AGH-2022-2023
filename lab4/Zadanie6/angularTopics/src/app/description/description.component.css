@@ -1,0 +1,15 @@
+.container{
+  height: auto;
+  width: 94vh;
+  margin: auto;
+}
+
+.options{
+  border: 1px solid lightgrey;
+  box-sizing: border-box;
+  margin: auto;
+  margin-bottom: 5vh;
+  border-radius: 5px;
+  box-shadow: 0.1vh 0.1vh 0.5vh;
+  height: 10vh;
+}

@@ -1,0 +1,200 @@
+{
+  "Fiat": {
+    "126p": [
+      { "color": ["Niebieski", "Czerwony"] },
+      {
+        "equipment": [
+          "Elektroniczny system rozdziału siły hamowania",
+          "System rekomendacji przerw podczas trasy",
+          "Elektryczne szyby tylne",
+          "Kontrola trakcji",
+          "Podłokietniki - przód"
+        ]
+      }
+    ],
+    "125": [
+      { "color": ["Żółty", "Beżowy", "Czarny", "Srebrny"] },
+      {
+        "equipment": [
+          "Elektroniczny system rozdziału siły hamowania",
+          "Kontrola trakcji",
+          "Asystent hamowania awaryjnego w mieście",
+          "Zmiana biegów w kierownicy",
+          "Apteczka"
+        ]
+      }
+    ],
+    "Ducato": [
+      { "color": ["Czarny", "Niebieski", "Złoty"] },
+      {
+        "equipment": [
+          "Trójkąt ostrzegawczy",
+          "Czujnik zmierzchu",
+          "Kurtyny powietrzne - przód",
+          "Światła do jazdy dziennej diodowe LED",
+          "Podgrzewane lusterka boczne"
+        ]
+      }
+    ],
+    "Panda": [
+      { "color": ["Srebrny"] },
+      {
+        "equipment": [
+          "Koło dojazdowe",
+          "Kamizelka odblaskowa",
+          "System wykrywania zmęczenie kierowcy",
+          "Tapicerka materiałowa",
+          "Poduszka powietrzna pasażera"
+        ]
+      }
+    ],
+    "Tipo": [
+      { "color": ["Żółty", "Czerwony", "Czarny", "Biały"] },
+      {
+        "equipment": [
+          "Interfejs Bluetooth",
+          "Olej silnikowy",
+          "Poduszka powietrzna kierowcy",
+          "Apteczka",
+          "Komplet narzędzi"
+        ]
+      }
+    ]
+  },
+  "BMW": {
+    "M3": [
+      { "color": ["Srebrny", "Czerwony"] },
+      {
+        "equipment": [
+          "System Start/Stop",
+          "Podłokietniki - tył",
+          "Boczne poduszki powietrzne - przód ",
+          "ESP",
+          "kable rozruchowe"
+        ]
+      }
+    ],
+    "E36": [
+      { "color": ["Niebieski", "Brązowy"] },
+      {
+        "equipment": [
+          "Trójkąt ostrzegawczy",
+          "System wspomagania hamowania",
+          "Felgi stalowe",
+          "Kurtyny powietrzne - przód",
+          "System ostrzegający o możliwej kolizji"
+        ]
+      }
+    ],
+    "X6": [
+      { "color": ["Żółty", "Czerwony", "Zielony"] },
+      {
+        "equipment": [
+          "Podłokietniki - przód",
+          "Tapicerka materiałowa",
+          "Boczne poduszki powietrzne - przód ",
+          "Apteczka",
+          "Elektryczne szyby tylne"
+        ]
+      }
+    ],
+    "i3": [
+      { "color": ["Srebrny"] },
+      {
+        "equipment": [
+          "Kierownica wielofunkcyjna",
+          "Felgi stalowe",
+          "Zmiana biegów w kierownicy",
+          "Czujnik zmierzchu",
+          "Radio"
+        ]
+      }
+    ],
+    "i8": [
+      { "color": ["Żółty", "Czarny", "Srebrny", "Biały"] },
+      {
+        "equipment": [
+          "Elektryczne szyby tylne",
+          "System wykrywania zmęczenie kierowcy",
+          "Gniazdo USB",
+          "Zapas żarówek i bezpieczników",
+          "Tapicerka materiałowa"
+        ]
+      }
+    ]
+  },
+  "Audi": {
+    "A3": [
+      { "color": ["Żółty", "Brązowy", "Czarny", "Biały"] },
+      {
+        "equipment": [
+          "Kierownica wielofunkcyjna",
+          "System ostrzegający o możliwej kolizji",
+          "Oświetlenie adaptacyjne",
+          "Poduszka powietrzna kierowcy",
+          "Aktywny asystent hamowania awaryjnego"
+        ]
+      }
+    ],
+    "Q3": [
+      { "color": ["Czarny", "Czerwony"] },
+      {
+        "equipment": [
+          "System ostrzegający o możliwej kolizji",
+          "Olej silnikowy",
+          "Boczne poduszki powietrzne - przód ",
+          "Komplet narzędzi",
+          "Oświetlenie adaptacyjne"
+        ]
+      }
+    ],
+    "Q5": [
+      { "color": ["Niebieski", "Srebrny", "Czarny", "Biały"] },
+      {
+        "equipment": [
+          "kable rozruchowe",
+          "Interfejs Bluetooth",
+          "Czujnik deszczu",
+          "Felgi stalowe",
+          "Radio"
+        ]
+      }
+    ],
+    "A1": [
+      { "color": ["Brązowy", "Czerwony"] },
+      {
+        "equipment": [
+          "Interfejs Bluetooth",
+          "Kurtyny powietrzne - przód",
+          "System hamowania awaryjnego dla ochrony pieszych",
+          "Kierownica wielofunkcyjna",
+          "Podłokietniki - tył"
+        ]
+      }
+    ],
+    "A4": [
+      { "color": ["Żółty", "Czerwony", "Czarny"] },
+      {
+        "equipment": [
+          "System rekomendacji przerw podczas trasy",
+          "Kierownica wielofunkcyjna",
+          "System hamowania awaryjnego dla ochrony pieszych",
+          "kable rozruchowe",
+          "Asystent hamowania awaryjnego w mieście"
+        ]
+      }
+    ],
+    "80": [
+      { "color": ["Srebrny", "Czerwony", "Czarny", "Biały"] },
+      {
+        "equipment": [
+          "Lampy bi-ksenonowe",
+          "System powiadamiania o wypadku",
+          "Gniazdo USB",
+          "Czujnik deszczu",
+          "Tapicerka materiałowa"
+        ]
+      }
+    ]
+  }
+}

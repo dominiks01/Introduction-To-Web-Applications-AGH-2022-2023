@@ -1,0 +1,39 @@
+<div class="parent">
+  <div class="div1">
+
+    <div class="basket">
+      <fa-icon
+        [icon]="faShoppingBasket"
+        id="icond"
+        transform="shrink--30"
+      ></fa-icon>
+      <div>{{ "   " + totalSum + " zł" }}</div>
+    </div>
+
+    <div
+      class="tripCounter"
+      [ngClass]="{
+        tripCounerSecondBackground: tripCounter < 10,
+        tripCounerFirstBackground: tripCounter >= 10
+      }"
+    >
+      <p>{{ "Liczba zarezerwowanych wycieczek: " + tripCounter }}</p>
+    </div>
+
+    <div id="formTrip">
+      <button class="nav-item nav-link-edit" [routerLink]="['/form-trip']">home</button >
+    </div>
+
+  </div>
+  <div class="div2">
+    <ng-container *ngFor="let data of trips" class="container">
+      <app-trip-card
+        (tripEmiter)="tripDelete($event)"
+        (sumEmiter)="receiveMessage($event)"
+        [tripInfo]="data"
+        [cheapest]="checkCheapest(data.price)"
+        [mostExpensive]="checkMostExpenssive(data.price)"
+      ></app-trip-card> </ng-container
+    >>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+picture {
+  height: 10%;
+  max-width: 100%;
+  max-height: 50%;
+}
+
+
+.cityContainer > div > h1,
+.cityContainer > div > h2{
+  text-align: center;
+  line-height: 3vh;
+  font-weight:bolder;
+}
+
+.cityContainer > div > p {
+  margin-left: 1vh;
+  font-size: 15px;
+}
+
+.cityContainer > div {
+  width: 350px;
+  height: 550px;
+  border: 1px solid black;
+  border-radius: 1vh;
+  box-shadow: 0.5vh 0.5vh 5vh;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 9px;
+  border-bottom: 1px solid black;
+}
+
+.cityContainer{
+  position:relative;
+}
+
+.cityOutContainer > div{
+  position: relative;
+  background-color: lightcoral !important;
+}
+
+.cheapest > div{
+  position: relative;
+  background-color: lightgreen;
+}
+
+.mostExpensive > div{
+  position: relative;
+  background-color: lightseagreen;
+}
+
+#quantityInfo{
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  font-size: 20px;
+  display: flex;
+  gap: 1vh;
+}
+
+#quantityInfo > p{
+  position: absolute;
+  font-size: 22px;
+  font-weight: bolder;
+  right: 150%;
+  bottom: -100%;
+  text-align: center;
+}
+
+button{
+  width: 3vh;
+  height: 3vh;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.remove{
+  position: absolute;
+  left: 10%;
+  bottom: 10%;
+}

@@ -1,0 +1,34 @@
+<div [ngClass]="{'cityOutContainer': bookingWarning , 'cityContainer' : true, 'cheapest': cheapest, 'mostExpensive': mostExpensive}">
+  <div>
+    <picture>
+      <img src={{ImagePath}} alt="Flowers">
+    </picture>
+    <h1>{{name | firstPipe}}</h1>
+    <h2>{{country | firstPipe}}</h2>
+
+
+    <p>
+      <br>
+      {{"Data rozpoczęcia: " + startDate}}  <br>
+      {{"Data zakończenia: " + endDate}}    <br>
+      {{ price | pricePipe }}<br>
+    </p>
+
+    <p class="descriptionInfo">
+      <br>{{description}}
+    </p>
+
+    <button class="remove" type="button" clickable  (click)="removeTrip(tripInfo, quantity)">
+      <fa-icon [icon]="faTrash" id="icond" transform="shrink--20"></fa-icon>
+    </button>
+
+    <div id="quantityInfo">
+      <p *ngIf="quantity=='0'">Brak Dostępnych Wycieczek</p>
+      <button  type="button" clickable (click)="changeQuantity(-1)">+</button>
+        {{quantity}}
+      <button  type="button" clickable  (click)="changeQuantity(1)">-</button>
+    </div>
+
+    <!-- <button type="text">Read Article</button> -->
+  </div>
+</div>
