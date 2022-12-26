@@ -1,59 +1,86 @@
-import { TripCardComponent } from './../trip-card/trip-card.component';
-import { Component, OnInit } from '@angular/core';
-import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { RatingData } from '../ratingData';
+import { RatingComponent } from './../rating/rating.component';
+import { TripData } from '../tripData';
+import { Component, OnInit, OnDestroy} from '@angular/core';
+import { faShoppingBasket, faFilter, faL } from '@fortawesome/free-solid-svg-icons';
+import { DataService } from '../dataservice';
 
 @Component({
-  selector: 'app-main-page',
+  selector: 'home',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css']
 })
-export class MainPageComponent implements OnInit{
-  faShoppingBasket = faShoppingBasket;
-  constructor(){}
+export class MainPageComponent implements OnInit, OnDestroy{
 
-  trips: any;
-  prices: any;
-  json2!: JSON;
+  constructor(public dataservice: DataService) {}
+
+  faShoppingBasket = faShoppingBasket;
+  faFilter = faFilter;
+
+  ngOnDestroy() {
+  }
+
+  trips: TripData[] = [];
+  prices: any = [];
   totalSum : number = 0;
   tripCounter : number = 0;
 
+  showdiv3: boolean = false;
+
   ngOnInit(): void {
-    fetch('./assets/tripInfo.json')
-      .then((res) => res.json())
-      .then((json) => {
-        this.trips = json["trips"];
-        this.json2 = this.trips;
-        this.prices = Object.values(this.json2).map(item => item.price).map((item:any) => parseInt(item));
-      });
+    console.log(this.dataservice.tripData);
+    this.trips = this.dataservice.tripData;
+
+    this.trips.forEach((elem)=>{
+      this.tripCounter += (elem.startQuantity - elem.quantity);
+    })
   }
 
   checkCheapest(priceOfTrip: any){
-    return priceOfTrip == Math.min(...this.prices);
+    let minPrice: number = Infinity;
+    this.dataservice.tripData.forEach(element => {
+      minPrice = Math.min(minPrice, element.price);
+    });
+    return priceOfTrip == minPrice;
   }
 
   checkMostExpenssive(priceOfTrip: any){
-    return priceOfTrip == Math.max(...this.prices);
+    let maxPrice: number = 0;
+    this.dataservice.tripData.forEach(element => {
+      maxPrice = Math.max(maxPrice, element.price);
+    });
+    return priceOfTrip == maxPrice;
   }
 
   tripDelete($event:any){
+    let indexOfObjectInDataService = this.dataservice.tripData.findIndex((object:any) => {
+       return object['name'] === $event['name']
+     });
 
-    const indexOfObject = this.trips.findIndex((object:any) => {
-      return object['name'] === $event['object']['name'];
-    });
-
-    if (indexOfObject !== -1) {
-      this.trips.splice(indexOfObject, 1);
+    if (indexOfObjectInDataService !== -1) {
+      this.dataservice.tripData.splice(indexOfObjectInDataService, 1);
     }
 
-    this.json2 = this.trips;
-    this.prices = Object.values(this.json2).map(item => item.price).map((item:any) => parseInt(item));
-
-    this.tripCounter -= ($event['object']['quantity'] - $event['quantity']);
-    this.totalSum -= ($event['object']['quantity'] - $event['quantity'])*parseInt($event['object']['price']);
+    this.tripCounter -= parseInt($event['value']);
+    this.dataservice.basketSum -= parseInt($event['value'])*parseInt($event['price']);
+    this.prices = Object.values(this.trips).map(item => item.price).map((item:any) => parseInt(item));
   }
 
   receiveMessage($event:any){
-    this.totalSum -= parseInt($event);
+    this.dataservice.basketSum -= parseInt($event);
     this.tripCounter -= (parseInt($event)>0)?1:-1;
+  }
+
+  getData(){
+    return Object(this.trips);
+    this.trips;
+  }
+
+  showFilter(){
+    this.showdiv3 = !this.showdiv3;
+  }
+
+  getSum(){
+    return this.dataservice.basketSum;
   }
 }

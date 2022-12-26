@@ -1,0 +1,49 @@
+<div class="main">
+  <div class="cityContainer">
+    <div>
+      <picture>
+        <img
+          src="{{ ImagePath }}"
+          onerror="this.onerror=null; src='\\assets\\images\\No_image_available.png'"
+        />
+      </picture>
+      <h1>{{ name }}</h1>
+      <h2>{{ country }}</h2>
+
+      <p>
+        <br />
+        {{ "Data rozpoczęcia: " + startDate }} <br />
+        {{ "Data zakończenia: " + endDate }} <br />
+        {{ price }}<br />
+      </p>
+
+      <p class="descriptionInfo"><br />{{ description }}</p>
+    </div>
+  </div>
+
+<div [formGroup]="ratingForm" class="ratingSection">
+    <div>
+      <fa-icon [icon]="faStar" class="starIcon" (click)="update(1)"></fa-icon>
+      <fa-icon [icon]="faStar" class="starIcon" (click)="update(2)"></fa-icon>
+      <fa-icon [icon]="faStar" class="starIcon" (click)="update(3)"></fa-icon>
+      <fa-icon [icon]="faStar" class="starIcon" (click)="update(4)"></fa-icon>
+      <fa-icon [icon]="faStar" class="starIcon" (click)="update(5)"></fa-icon>
+    </div>
+
+    <textarea
+      name="comment"
+      placeholder="Description"
+      style="height: 50vh; font-size: 20px; width: 99%;"
+      formControlName="comment"
+    ></textarea>
+
+    <div id="controls">
+      <button clickable (click)="cancel()" class="btn btn-default" style="background-color: red; color: aliceblue; font-size: 20px">
+        Cancel
+      </button>
+      <button (click)="submit()" class="button" type="submit">Oceń</button>
+
+      <!-- <button type="submit"  style="font-size: 20px">Send</button> -->
+    </div>
+  </div>
+</div>

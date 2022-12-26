@@ -1,0 +1,83 @@
+picture {
+  height: 10%;
+  max-width: 100%;
+  max-height: 50%;
+}
+
+.cityContainer{
+  margin-left: 10%;
+  padding-top: 15vh;
+  width: 40%;
+  float: left;
+  position:relative;
+
+}
+
+.cityContainer > div > h1,
+.cityContainer > div > h2{
+  text-align: center;
+  font-weight:bolder;
+  word-wrap: break-word;
+}
+
+.cityContainer > div > p {
+  margin-left: 1vh;
+  font-size: 15px;
+}
+
+.cityContainer > div {
+  width: 350px;
+  height: 550px;
+  border: 1px solid black;
+  border-radius: 1vh;
+  box-shadow: 0.5vh 0.5vh 5vh;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 9px;
+  border-bottom: 1px solid black;
+}
+
+#quantityInfo{
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  font-size: 20px;
+  display: flex;
+  gap: 1vh;
+}
+
+.ratingSection{
+  margin-top: 15vh;
+  width: 350px;
+  height: 550px;
+  border: 1px solid black;
+  float: left;
+}
+
+.stars{
+  width: 100%;
+  height: 10vh;
+  border: 1px solid gold;
+}
+
+.main{
+  display: flex;
+  flex-direction: row;
+}
+
+#controls{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 5vh;
+  justify-content: space-around;
+}
+
+#controls > * {
+  width: 33%;
+  border-radius: 1vh;
+}
+

@@ -1,32 +1,36 @@
-<div [ngClass]="{'cityOutContainer': bookingWarning , 'cityContainer' : true, 'cheapest': cheapest, 'mostExpensive': mostExpensive}">
-  <div>
-    <picture>
-      <img src={{ImagePath}} alt="Flowers">
-    </picture>
-    <h1>{{name | firstPipe}}</h1>
-    <h2>{{country | firstPipe}}</h2>
+<div [ngClass]="{ cityOutContainer: getQuantity()<=3, cityContainer: true, cheapest: cheapest, mostExpensive: mostExpensive}">
 
+  <div>
+    <img src="{{ data.ImagePath }}" onerror="this.onerror=null; src='\\assets\\images\\No_image_available.png'" />
+    <h1>{{ data.name | firstPipe }}</h1>
+    <h2>{{ data.country | firstPipe }}</h2>
 
     <p>
-      <br>
-      {{"Data rozpoczęcia: " + startDate}}  <br>
-      {{"Data zakończenia: " + endDate}}    <br>
-      {{ price | pricePipe }}<br>
+      <br/>
+      {{ "Data rozpoczęcia: " + data.startDate }} <br />
+      {{ "Data zakończenia: " + data.endDate }} <br />
+      {{ data.price | pricePipe }}<br />
     </p>
 
-    <p class="descriptionInfo">
-      <br>{{description}}
-    </p>
+    <p class="descriptionInfo"><br/>{{ data.description }}</p>
+    <div [ngClass]="getQuantity() <= 0? 'sold' : 'Nonsold'" style="color: gold;">Brak Dostępnych Wycieczek</div>
+    <div class="controls">
 
-    <button class="remove" type="button" clickable  (click)="removeTrip(tripInfo, quantity)">
-      <fa-icon [icon]="faTrash" id="icond" transform="shrink--20"></fa-icon>
-    </button>
+      <button id="remove" type="button" clickable (click)="removeTrip()">
+        <fa-icon [icon]="faTrash" id="icond"></fa-icon>
+      </button>
 
-    <div id="quantityInfo">
-      <p *ngIf="quantity=='0'">Brak Dostępnych Wycieczek</p>
-      <button  type="button" clickable (click)="changeQuantity(-1)">+</button>
-        {{quantity}}
-      <button  type="button" clickable  (click)="changeQuantity(1)">-</button>
+      <button class="ratings" [routerLink]="['/rate-trip', this.data]">OCEŃ WYCIECZKĘ</button>
+
+      <div class="quantityInfo">
+        <button type="button" (click)="changeQuantity(-1)">+</button>
+        {{ getQuantity()}}
+        <button type="button" (click)="changeQuantity(1)">-</button>
+      </div>
+    </div>
+
+    <div class="ratingsAverage">
+      {{"Średnia ocen wycieczki: " + getAverage()}}
     </div>
 
     <!-- <button type="text">Read Article</button> -->

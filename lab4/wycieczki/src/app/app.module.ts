@@ -1,3 +1,5 @@
+import { RatingComponent } from './rating/rating.component';
+import { RatingData } from './ratingData';
 import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,7 +12,11 @@ import { FirstPipePipe } from './pipes/first-pipe.pipe';
 import { PricePipePipe } from './pipes/price-pipe.pipe';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormComponent } from './formTrip/form.component';
+import { FormComponent } from './form-trip/form.component';
+
+import { DataService } from './dataservice';
+import { ShoppingBasketComponent } from './shopping-basket/shopping-basket.component';
+import { GetQuantityPipe } from './pipes/get-quantity.pipe';
 
 @NgModule({
   declarations: [
@@ -20,14 +26,17 @@ import { FormComponent } from './formTrip/form.component';
     FirstPipePipe,
     PricePipePipe,
     FormComponent,
+    RatingComponent,
+    ShoppingBasketComponent,
+    GetQuantityPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule{

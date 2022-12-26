@@ -1,6 +1,9 @@
+import { TripData } from '../tripData';
+import { Router, NavigationStart } from '@angular/router';
 import { JsonPipe } from '@angular/common';
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { DataService } from './../dataservice';
 
 @Component({
   selector: 'app-trip-card',
@@ -8,54 +11,71 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./trip-card.component.css'],
 })
 export class TripCardComponent implements OnInit {
-  @Input() tripInfo!: any;
+  @Input() data!: TripData;
   @Input() cheapest!: boolean;
   @Input() mostExpensive!: boolean;
+  @Input() tripToDelete: any;
 
   @Output() sumEmiter = new EventEmitter<string>();
   @Output() tripEmiter = new EventEmitter<Object>();
 
   faTrash = faTrash;
-  constructor() { }
+  constructor(public dataservice: DataService) {}
 
-  name!:string;
-  country!:string;
-  startDate!:string;
-  endDate!:string;
-  price!:string;
-  quantity!:string;
-  ImagePath!:string;
-  description!: string;
-
-  startingQuantity! : string;
+  startingQuantity! : number;
   bookingWarning = false;
 
   bookedTrips!: number;
+  average: number = 0;
+
+  dataToDelete!: string;
 
   ngOnInit(): void {
-    this.name = this.tripInfo['name'];
-    this.country = this.tripInfo['country'];
-    this.startDate = this.tripInfo['startDate'];
-    this.endDate = this.tripInfo['endDate'];
-    this.price = this.tripInfo['price'];
-    this.quantity = this.tripInfo['quantity'];
-    this.ImagePath = this.tripInfo['ImagePath'];
-    this.description = this.tripInfo['description'];
-    this.startingQuantity = this.quantity;
+
+    this.startingQuantity = this.data.startQuantity;
+
+    this.data.ratings.forEach(element => {
+      this.average += element['rating'];
+    });
+
+    if(this.data.ratings.length != 0)
+      this.average /= this.data.ratings.length;
   }
 
   changeQuantity(value : any){
-    let starting = this.quantity;
-    this.quantity = (this.quantity + value > this.startingQuantity || this.quantity+value < "0")? this.quantity: this.quantity + value;
-    this.bookedTrips = parseInt(this.quantity);
-    this.bookingWarning = (this.quantity <= "3")? true: false;
+    let starting =  this.data.quantity
 
-    if(starting != this.quantity){
-      this.sumEmiter.emit((value*(this.price as any)).toString());
+    this.data.quantity = ( this.data.quantity + value > this.startingQuantity ||  this.data.quantity+value < "0")?
+                          this.data.quantity:  this.data.quantity + value;
+
+    this.dataservice.tripData.forEach((element) => {
+      if(element.name == this.data.name){
+        element.quantity = this.data.quantity;
+      }
+    })
+
+    if(starting !=  this.data.quantity){
+      this.sumEmiter.emit((value*( this.data.price as any)).toString());
     }
+
   }
 
-  removeTrip(value: any, quantity: any){
-    this.tripEmiter.emit({object: value, quantity: quantity});
+  removeTrip(){
+    this.tripEmiter.emit({name: this.data.name, value: (this.data.startQuantity - this.data.quantity), price: this.data.price});
+  }
+
+  getAverage(){
+    var value = 0;
+
+    this.dataservice.tripData.forEach((element) => {
+      if(element.name == this.data.name){
+        value = element.averageRatings;
+      }});
+
+    return (value).toFixed(2);
+  }
+
+  getQuantity(){
+    return this.data.quantity;
   }
 }

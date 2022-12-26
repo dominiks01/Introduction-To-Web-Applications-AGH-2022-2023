@@ -10,12 +10,16 @@ picture {
   max-height: 50%;
 }
 
+.cityContainer{
+  background-color: beige;
+}
 
 .cityContainer > div > h1,
 .cityContainer > div > h2{
   text-align: center;
-  line-height: 3vh;
+  line-height: 5px;
   font-weight:bolder;
+  word-wrap: break-word;
 }
 
 .cityContainer > div > p {
@@ -25,16 +29,20 @@ picture {
 
 .cityContainer > div {
   width: 350px;
-  height: 550px;
+  height: 600px;
   border: 1px solid black;
   border-radius: 1vh;
   box-shadow: 0.5vh 0.5vh 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 10%;
 }
 
 img {
   width: 100%;
   height: auto;
-  border-radius: 9px;
+  border-radius: 50%;
   border-bottom: 1px solid black;
 }
 
@@ -57,33 +65,67 @@ img {
   background-color: lightseagreen;
 }
 
-#quantityInfo{
-  position: absolute;
-  bottom: 10%;
-  right: 10%;
+.quantityInfo{
+  width: 30%;
   font-size: 20px;
   display: flex;
   gap: 1vh;
 }
 
-#quantityInfo > p{
-  position: absolute;
+.quantityInfo > p{
   font-size: 22px;
   font-weight: bolder;
-  right: 150%;
-  bottom: -100%;
   text-align: center;
 }
 
-button{
+.quantityInfo > button{
   width: 3vh;
   height: 3vh;
-  border-radius: 50%;
+  border-radius: 5vh;
   font-size: 20px;
 }
 
-.remove{
+#remove{
+  z-index: 1;
+}
+
+.controls > * {
+  height: 3vh;
+}
+
+.ratings{
+  width: 30%;
+  font-size: 10px;
+}
+
+.controls{
+  padding-left: 2vh;
+  padding-top: 2vh;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.sold{
+  width: 200%;
   position: absolute;
-  left: 10%;
-  bottom: 10%;
+  font-size: 55px;
+  color: cornsilk;
+  font-weight: 900;
+  transform: rotate(-63deg) translateY(-145px) translateX(-80px);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  z-index: 0;
+}
+
+.Nonsold{
+  display: none;
+}
+
+.ratingsAverage{
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  line-height: 10px;
 }

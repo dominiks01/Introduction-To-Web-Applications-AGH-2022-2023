@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PricePipePipe implements PipeTransform {
 
-  transform(value: String, ...args: unknown[]): String {
+  transform(value: number, ...args: unknown[]): String {
     return "Cena jednostkowa: "+ value + " zł";
   }
 
