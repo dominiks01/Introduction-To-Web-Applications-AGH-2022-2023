@@ -1,6 +1,4 @@
 import { TripData } from '../tripData';
-import { Router, NavigationStart } from '@angular/router';
-import { JsonPipe } from '@angular/common';
 import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { DataService } from './../dataservice';
@@ -23,12 +21,7 @@ export class TripCardComponent implements OnInit {
   constructor(public dataservice: DataService) {}
 
   startingQuantity! : number;
-  bookingWarning = false;
-
-  bookedTrips!: number;
   average: number = 0;
-
-  dataToDelete!: string;
 
   ngOnInit(): void {
 
@@ -42,11 +35,13 @@ export class TripCardComponent implements OnInit {
       this.average /= this.data.ratings.length;
   }
 
+
   changeQuantity(value : any){
     let starting =  this.data.quantity
 
     this.data.quantity = ( this.data.quantity + value > this.startingQuantity ||  this.data.quantity+value < "0")?
                           this.data.quantity:  this.data.quantity + value;
+
 
     this.dataservice.tripData.forEach((element) => {
       if(element.name == this.data.name){
@@ -65,14 +60,7 @@ export class TripCardComponent implements OnInit {
   }
 
   getAverage(){
-    var value = 0;
-
-    this.dataservice.tripData.forEach((element) => {
-      if(element.name == this.data.name){
-        value = element.averageRatings;
-      }});
-
-    return (value).toFixed(2);
+    return this.data.averageRatings.toFixed(2);
   }
 
   getQuantity(){

@@ -10,7 +10,6 @@ export class ShoppingBasketComponent implements OnInit{
   constructor(public dataservice: DataService) {}
 
   ngOnInit(){
-    console.log(this.dataservice.tripData);
   }
 
   getData(){

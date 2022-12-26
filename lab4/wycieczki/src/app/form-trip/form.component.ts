@@ -1,6 +1,6 @@
-import {Component,Output,EventEmitter,OnInit,OnDestroy} from '@angular/core';
+import {Component,OnInit,OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
-import {AbstractControl,FormBuilder,FormControl,FormGroup,} from '@angular/forms';
+import { FormControl,FormGroup,} from '@angular/forms';
 import { TripData } from '../tripData';
 import { DataService } from '../dataservice';
 
@@ -27,7 +27,6 @@ export class FormComponent implements OnInit, OnDestroy {
   }
 
   validate(form:any) : boolean{
-    console.log(form);
     return  form.value.name != null  &&
             form.value.country != null  &&
             form.value.startDate != null  &&

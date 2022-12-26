@@ -21,11 +21,6 @@
     </div>
   </div>
 
-  <!-- TUTAJ -->
-  <!-- <div class="div3" [ngClass]="showdiv3 ? 'showFilter' : 'hideFilter'">
-    <div></div>
-  </div> -->
-
   <div class="div3">
     <ng-container *ngFor="let data of getData()" class="container">
       <app-trip-card  (sumEmiter)="receiveMessage($event)" (tripEmiter)="tripDelete($event)"

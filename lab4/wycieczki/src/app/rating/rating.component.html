@@ -3,21 +3,21 @@
     <div>
       <picture>
         <img
-          src="{{ ImagePath }}"
+          src="{{ data.ImagePath }}"
           onerror="this.onerror=null; src='\\assets\\images\\No_image_available.png'"
         />
       </picture>
-      <h1>{{ name }}</h1>
-      <h2>{{ country }}</h2>
+      <h1>{{ data.name }}</h1>
+      <h2>{{ data.country }}</h2>
 
       <p>
         <br />
-        {{ "Data rozpoczęcia: " + startDate }} <br />
-        {{ "Data zakończenia: " + endDate }} <br />
-        {{ price }}<br />
+        {{ "Data rozpoczęcia: " + data.startDate }} <br />
+        {{ "Data zakończenia: " + data.endDate }} <br />
+        {{ data.price }}<br />
       </p>
 
-      <p class="descriptionInfo"><br />{{ description }}</p>
+      <p class="descriptionInfo"><br />{{ data.description }}</p>
     </div>
   </div>
 
