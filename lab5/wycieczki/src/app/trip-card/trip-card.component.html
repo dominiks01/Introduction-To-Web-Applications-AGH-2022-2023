@@ -1,0 +1,37 @@
+<div [ngClass]="{ cityOutContainer: getQuantity()<=3, cityContainer: true, cheapest: cheapest, mostExpensive: mostExpensive}">
+
+  <div>
+    <img src="{{ data.ImagePath }}" onerror="this.onerror=null; src='\\assets\\images\\No_image_available.png'" />
+    <h1>{{ data.name | firstPipe }}</h1>
+    <h2>{{ data.country | firstPipe }}</h2>
+
+    <p>
+      <br/>
+      {{ "Data rozpoczęcia: " + data.startDate }} <br />
+      {{ "Data zakończenia: " + data.endDate }} <br />
+      {{ data.price | pricePipe }}<br />
+    </p>
+
+    <p class="descriptionInfo"><br/>{{ data.description }}</p>
+    <div [ngClass]="getQuantity() <= 0? 'sold' : 'Nonsold'" style="color: gold;">Brak Dostępnych Wycieczek</div>
+    <div class="controls">
+
+      <button id="remove" type="button" clickable (click)="removeTrip()">
+        <fa-icon [icon]="faTrash" id="icond"></fa-icon>
+      </button>
+
+      <button class="ratings" [routerLink]="['/rate-trip', this.data]">OCEŃ WYCIECZKĘ</button>
+
+      <div class="quantityInfo">
+        <button type="button" (click)="changeQuantity(-1)">+</button>
+        {{ getQuantity()}}
+        <button type="button" (click)="changeQuantity(1)">-</button>
+      </div>
+    </div>
+
+    <div class="ratingsAverage">
+      {{"Średnia ocen wycieczki: " + getAverage()}}
+    </div>
+
+  </div>
+</div>
