@@ -1,0 +1,17 @@
+<div class="main">
+  <div class="postForm" >
+    <button [routerLink]="['/post-form']">Nowy Post</button>
+  </div>
+
+  <div class="post" *ngFor="let post of data.posts">
+      <span class="title">{{ post.title }}</span>
+      <span>{{ post.body }}</span>
+
+      <div class="info">
+        <span>{{"User ID:" + post.userId }}</span>
+        <span>{{"Post ID:" + post.id }}</span>
+      </div>
+
+  </div>
+
+</div>

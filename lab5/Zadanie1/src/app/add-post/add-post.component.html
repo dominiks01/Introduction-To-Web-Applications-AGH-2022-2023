@@ -1,0 +1,34 @@
+<div class="main">
+  <form [formGroup]="postForm" class="form">
+    <input type="text" id="title"  name="title" class="form-control" formControlName="title" required placeholder="Title">
+
+    <div *ngIf="title?.errors?.['required']">
+      Title is required.
+    </div>
+
+    <div *ngIf="title?.errors?.['minlength']">
+      Title must be at least 5 character long.
+    </div>
+
+    <textarea class="form-control" id="description" name="description" formControlName="description" placeholder="Description"></textarea>
+
+    <div *ngIf="description?.errors?.['required']">
+      description is required.
+    </div>
+
+    <input type="text" class="form-control"  name="userID" formControlName="userID" placeholder="ID">
+
+    <div *ngIf="description?.errors?.['minlength']">
+      Title must be at least 5 character long.
+    </div>
+
+    <div *ngIf="ID?.errors?.['required']">
+      ID is required.
+    </div>
+
+    <p>Form Status: {{ postForm.status }}</p>
+
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Add</button>
+
+  </form>
+</div>

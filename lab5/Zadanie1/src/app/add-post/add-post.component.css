@@ -1,0 +1,28 @@
+.main {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.form input{
+  width: 500px;
+  height: 30px;
+  font-size: 25px;
+}
+
+textarea{
+  width: 500px;
+  height: 125px;
+  font-size: 25px;
+}

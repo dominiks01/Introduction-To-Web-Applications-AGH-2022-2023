@@ -1,0 +1,46 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  background-color:rgb(198, 221, 230);
+  align-items: center;
+  justify-content: center;
+  overflow:visible;
+}
+
+.postForm{
+  min-width: 600px;
+  max-width: 600px;
+  margin: 3vh;
+  padding: 3vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(209, 236, 246);
+  border-radius: 1vh;
+  background-color: rgb(209, 236, 246);
+}
+
+.post {
+  min-width: 600px;
+  max-width: 600px;
+  margin: 3vh;
+  padding: 3vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(209, 236, 246);
+  border-radius: 1vh;
+  background-color: rgb(209, 236, 246);
+}
+
+.title{
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.info{
+  align-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}

@@ -10,10 +10,6 @@ picture {
   max-height: 50%;
 }
 
-.cityContainer{
-  background-color: beige;
-}
-
 .cityContainer > div > h1,
 .cityContainer > div > h2{
   text-align: center;
@@ -29,20 +25,18 @@ picture {
 
 .cityContainer > div {
   width: 350px;
-  height: 600px;
+  height: 450px;
   border: 1px solid black;
-  border-radius: 1vh;
   box-shadow: 0.5vh 0.5vh 5vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding-bottom: 10%;
+  gap:2vh;
 }
 
 img {
   width: 100%;
   height: auto;
-  border-radius: 50%;
   border-bottom: 1px solid black;
 }
 

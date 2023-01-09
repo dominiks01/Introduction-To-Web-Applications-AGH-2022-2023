@@ -1,37 +1,38 @@
-<div [ngClass]="{ cityOutContainer: getQuantity()<=3, cityContainer: true, cheapest: cheapest, mostExpensive: mostExpensive}">
-
+<div [ngClass]="{
+    cityContainer: true,
+    cheapest: cheapest,
+    mostExpensive: mostExpensive,
+    cityOutContainer: isOutOfOrder()}">
   <div>
-    <img src="{{ data.ImagePath }}" onerror="this.onerror=null; src='\\assets\\images\\No_image_available.png'" />
-    <h1>{{ data.name | firstPipe }}</h1>
-    <h2>{{ data.country | firstPipe }}</h2>
+
+    <img src="{{ trip?.ImagePath }}" onerror="this.onerror=null; src='\\assets\\images\\No_image_available.png'"
+      (click)="goToInfo()"
+    />
+
+    <h1>{{ trip?.name }}</h1>
+    <h2>{{ trip?.country }}</h2>
+
+    <div class="ratingsAverage">
+      {{ "Średnia ocen wycieczki: " + getAverage() }}
+    </div>
 
     <p>
-      <br/>
-      {{ "Data rozpoczęcia: " + data.startDate }} <br />
-      {{ "Data zakończenia: " + data.endDate }} <br />
-      {{ data.price | pricePipe }}<br />
+      {{ "Data rozpoczęcia: " + trip?.startDate }} <br />
+      {{ "Data zakończenia: " + trip?.endDate }} <br />
+      {{ "Cena: " + trip?.price }}<br />
     </p>
 
-    <p class="descriptionInfo"><br/>{{ data.description }}</p>
-    <div [ngClass]="getQuantity() <= 0? 'sold' : 'Nonsold'" style="color: gold;">Brak Dostępnych Wycieczek</div>
     <div class="controls">
-
       <button id="remove" type="button" clickable (click)="removeTrip()">
         <fa-icon [icon]="faTrash" id="icond"></fa-icon>
       </button>
 
-      <button class="ratings" [routerLink]="['/rate-trip', this.data]">OCEŃ WYCIECZKĘ</button>
-
       <div class="quantityInfo">
         <button type="button" (click)="changeQuantity(-1)">+</button>
-        {{ getQuantity()}}
+        {{ trip?.available }}
         <button type="button" (click)="changeQuantity(1)">-</button>
       </div>
-    </div>
 
-    <div class="ratingsAverage">
-      {{"Średnia ocen wycieczki: " + getAverage()}}
     </div>
-
   </div>
 </div>

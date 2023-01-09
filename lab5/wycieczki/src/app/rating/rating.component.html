@@ -1,11 +1,53 @@
+
 <div class="main">
+  <div class="posts">
+  <ng-container *ngFor="let info of getPosts()">
+    <app-post [data]="info"></app-post>
+  </ng-container></div>
+
+  <div [formGroup]="ratingForm" class="ratingSection">
+
+    <div class="starIcons">
+      <fa-icon [icon]="faStar" class="starIcon" (click)="update(1)"></fa-icon>
+      <fa-icon [icon]="faStar" class="starIcon" (click)="update(2)"></fa-icon>
+      <fa-icon [icon]="faStar" class="starIcon" (click)="update(3)"></fa-icon>
+      <fa-icon [icon]="faStar" class="starIcon" (click)="update(4)"></fa-icon>
+      <fa-icon [icon]="faStar" class="starIcon" (click)="update(5)"></fa-icon>
+    </div>
+
+    <div>
+      <input class="inputForm" name="name" formControlName="name" placeholder="name">
+      <span *ngIf="formErrors.name">{{ formErrors.name }}</span>
+    </div>
+
+    <div>
+      <input class="inputForm" type="tripName" name="tripName" formControlName="tripName" placeholder="Nazwa Wycieczki">
+      <span *ngIf="formErrors.tripName">{{ formErrors.tripName }}</span>
+    </div>
+
+    <div>
+      <input class="inputForm" type="date" name="date" formControlName="startDate" placeholder="date">
+    </div>
+
+    <textarea name="description" placeholder="Description" style="height: 25vh; font-size: 20px; width: 99%;"
+    formControlName="description"></textarea>
+    <span *ngIf="formErrors.description">{{ formErrors.description }}</span>
+
+    <div id="controls">
+      <button clickable (click)="cancel()" class="btn btn-default"
+        style="background-color: red; color: aliceblue; font-size: 20px">
+        Cancel
+      </button>
+      <button (click)="submit()" class="button" type="submit">Oceń</button>
+
+      <!-- <button type="submit"  style="font-size: 20px">Send</button> -->
+    </div>
+  </div>
+
   <div class="cityContainer">
     <div>
       <picture>
-        <img
-          src="{{ data.ImagePath }}"
-          onerror="this.onerror=null; src='\\assets\\images\\No_image_available.png'"
-        />
+        <img src="{{ data.ImagePath }}" onerror="this.onerror=null; src='\\assets\\images\\No_image_available.png'" />
       </picture>
       <h1>{{ data.name }}</h1>
       <h2>{{ data.country }}</h2>
@@ -18,32 +60,6 @@
       </p>
 
       <p class="descriptionInfo"><br />{{ data.description }}</p>
-    </div>
-  </div>
-
-<div [formGroup]="ratingForm" class="ratingSection">
-    <div>
-      <fa-icon [icon]="faStar" class="starIcon" (click)="update(1)"></fa-icon>
-      <fa-icon [icon]="faStar" class="starIcon" (click)="update(2)"></fa-icon>
-      <fa-icon [icon]="faStar" class="starIcon" (click)="update(3)"></fa-icon>
-      <fa-icon [icon]="faStar" class="starIcon" (click)="update(4)"></fa-icon>
-      <fa-icon [icon]="faStar" class="starIcon" (click)="update(5)"></fa-icon>
-    </div>
-
-    <textarea
-      name="comment"
-      placeholder="Description"
-      style="height: 50vh; font-size: 20px; width: 99%;"
-      formControlName="comment"
-    ></textarea>
-
-    <div id="controls">
-      <button clickable (click)="cancel()" class="btn btn-default" style="background-color: red; color: aliceblue; font-size: 20px">
-        Cancel
-      </button>
-      <button (click)="submit()" class="button" type="submit">Oceń</button>
-
-      <!-- <button type="submit"  style="font-size: 20px">Send</button> -->
     </div>
   </div>
 </div>

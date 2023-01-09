@@ -9,11 +9,18 @@ import { DataService } from '../dataservice';
 export class ShoppingBasketComponent implements OnInit{
   constructor(public dataservice: DataService) {}
 
+  trips: object[] = [];
+
   ngOnInit(){
   }
 
   getData(){
-    return this.dataservice.tripData;
+    this.trips = [];
+    for(let key in this.dataservice.basket){
+      let id = key;
+      console.log(this.dataservice.trips)
+    }
+    return this.trips;
   }
 
   getSum(){

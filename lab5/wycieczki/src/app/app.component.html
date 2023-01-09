@@ -1,7 +1,18 @@
-<!-- <nav>
-  <ul>
-    <li><a routerLink="/main-component" routerLinkActive="active" ariaCurrentWhenActive="page">First Component</a></li>
-    <li><a routerLink="/form-trip" routerLinkActive="active" ariaCurrentWhenActive="page">Second Component</a></li>
-  </ul>
-</nav> -->
+<header>
+  <nav>
+    <div id="logo">
+      <h1>LOGO</h1>
+    </div>
+
+    <label class="menu-button-container" for="check">
+      <ul class="navOption">
+        <li><a [routerLink]="['/home']" routerLinkActive="router-link-active">HOME</a></li>
+        <li><a [routerLink]="['/offer-view']" routerLinkActive="router-link-active">OFERTA</a></li>
+        <li><a [routerLink]="['/routePath']" routerLinkActive="router-link-active">COS</a></li>
+        <li><a [routerLink]="['/shopping-basket']" routerLinkActive="router-link-active">BASKET</a></li>
+      </ul>
+
+    </label>
+  </nav>
+</header>
 <router-outlet></router-outlet>

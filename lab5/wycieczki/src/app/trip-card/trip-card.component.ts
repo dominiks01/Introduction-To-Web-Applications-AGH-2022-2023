@@ -1,6 +1,11 @@
+import { Router, ActivatedRoute } from '@angular/router';
+import { Query } from '@angular/fire/compat/firestore';
+import { validateArgCount } from '@firebase/util';
+import { subscribeOn } from 'rxjs';
+import { RatingData } from './../ratingData';
 import { TripData } from '../tripData';
 import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faL, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { DataService } from './../dataservice';
 
 @Component({
@@ -9,61 +14,100 @@ import { DataService } from './../dataservice';
   styleUrls: ['./trip-card.component.css'],
 })
 export class TripCardComponent implements OnInit {
-  @Input() data!: TripData;
+  @Input() data!: Object;
   @Input() cheapest!: boolean;
   @Input() mostExpensive!: boolean;
-  @Input() tripToDelete: any;
-
-  @Output() sumEmiter = new EventEmitter<string>();
-  @Output() tripEmiter = new EventEmitter<Object>();
 
   faTrash = faTrash;
-  constructor(public dataservice: DataService) {}
+  constructor(public dataservice: DataService, private router: Router, private route: ActivatedRoute) {
+    this.isLoading = false;
+  }
 
   startingQuantity! : number;
   average: number = 0;
+  tripInfo!: any;
+  trip!: any;
+
+  isLoading: boolean = false;
 
   ngOnInit(): void {
+    this.getTrip();
+    this.isLoading = true;
 
-    this.startingQuantity = this.data.startQuantity;
+    // this.trip = {
+    //   id:           this.tripInfo['ID' as keyof object],
+    //   name:         this.tripInfo['name' as keyof object],
+    //   country:      this.tripInfo['country' as keyof object],
+    //   price:        this.tripInfo['price' as keyof object],
+    //   quantity:     this.tripInfo['quantity' as keyof object],
+    //   startDate:    this.tripInfo['startDate' as keyof object],
+    //   endDate:      this.tripInfo['endDate' as keyof object],
+    //   ImagePath:    this.tripInfo['ImagePath' as keyof object],
+    //   description:  this.tripInfo['description' as keyof object],
+    //   reserved:     this.tripInfo['reserved' as keyof object],
+    //   available:    this.tripInfo['available' as keyof object]
+    // }
 
-    this.data.ratings.forEach(element => {
-      this.average += element['rating'];
-    });
+    // this.startingQuantity = this.data.startQuantity;
 
-    if(this.data.ratings.length != 0)
-      this.average /= this.data.ratings.length;
+    // var rate = this.data.ratings as TripData[];
+
+    // rate.forEach(element => {
+    //   this.average += (element as TripData).averageRatings;
+    // });
   }
 
+  getTrip(){
+    let id = this.data['ID' as keyof object];
+    this.dataservice.getTrips().subscribe(
+      value => {
+        for(let i of value){
+          if(i['ID' as keyof object] == id){
+            this.trip = i;
+          }
+        }
+      }
+    )
+  }
+
+  isLoaded(){
+    return !(this.trip === undefined)
+  }
 
   changeQuantity(value : any){
-    let starting =  this.data.quantity
+    let starting =  this.trip.available;
 
-    this.data.quantity = ( this.data.quantity + value > this.startingQuantity ||  this.data.quantity+value < "0")?
-                          this.data.quantity:  this.data.quantity + value;
+    if(this.trip.available < 0)
+      return;
 
+    let newQuantity = this.trip.available + value;
+    let newReserved = this.trip.reserved - value;
 
-    this.dataservice.tripData.forEach((element) => {
-      if(element.name == this.data.name){
-        element.quantity = this.data.quantity;
-      }
-    })
+    if(newQuantity > this.trip.quantity || newQuantity < 0 || newReserved < 0 || newReserved > this.trip.quantity)
+      return
 
-    if(starting !=  this.data.quantity){
-      this.sumEmiter.emit((value*( this.data.price as any)).toString());
-    }
-
+    this.dataservice.updateQuantity(this.trip.ID, newQuantity, newReserved);
+    this.dataservice.basketSum += (starting - newQuantity)*this.trip.price;
+    this.dataservice.addToBasket(this.trip.ID, value);
   }
 
   removeTrip(){
-    this.tripEmiter.emit({name: this.data.name, value: (this.data.startQuantity - this.data.quantity), price: this.data.price});
+    this.dataservice.removeTrip(this.trip.ID);
+  }
+
+  isOutOfOrder(){
+    return this.data['available' as keyof object] <= 3;
   }
 
   getAverage(){
-    return this.data.averageRatings.toFixed(2);
+    //return this.data.averageRatings.toFixed(2);
   }
 
   getQuantity(){
-    return this.data.quantity;
+    return this.trip.available;
+  }
+
+  goToInfo(){
+    this.router.navigate(['/offer-view/trip-info', this.trip])
   }
 }

@@ -1,0 +1,61 @@
+<div class="main">
+  <div class="imageContainer">
+    <img src="{{ data?.ImagePath }}" />
+  </div>
+
+  <div class="info">
+    <div>
+      <table>
+        <tr>
+          <th>Name</th>
+          <td>{{ data?.name }}</td>
+        </tr>
+
+        <tr>
+          <th>Country</th>
+          <td>{{ data?.country }}</td>
+        </tr>
+
+        <tr>
+          <th>Price</th>
+          <td>{{ data?.price }}</td>
+        </tr>
+
+        <tr>
+          <th>Start Date:</th>
+          <td>{{ data?.startDate }}</td>
+        </tr>
+
+        <tr>
+          <th>End Date:</th>
+          <td>{{ data?.endDate }}</td>
+        </tr>
+
+        <tr>
+          <th>Description</th>
+          <td>{{ data?.description }}</td>
+        </tr>
+      </table>
+
+    <div class="controls">
+
+      <div class="quantityInfo">
+        <button type="button" (click)="changeQuantity(-1)">+</button>
+        {{ data?.available }}
+        <button type="button" (click)="changeQuantity(1)">-</button>
+      </div>
+
+      <div>
+        <button type="button" (click)="goToRating()">
+          Oceń Wycieczkę
+        </button>
+      </div>
+
+    </div>
+
+
+    </div>
+  </div>
+
+
+</div>

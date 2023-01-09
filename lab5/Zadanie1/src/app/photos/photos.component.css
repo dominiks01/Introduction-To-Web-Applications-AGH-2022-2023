@@ -1,0 +1,46 @@
+.main{
+  display: flex;
+  flex-direction: row;
+  gap: 1vh;
+  background-color:rgb(198, 221, 230);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-basis: 33.333333%;
+  overflow: hidden;
+}
+
+.aside{
+  margin-left: 2vh;
+  margin-right: 2vh;
+  width: 70%;
+  height: 100%;
+}
+
+
+.photo {
+  max-width: 500px;
+  min-width: 500px;
+  margin: 3vh;
+  padding: 3vh;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgb(209, 236, 246);
+  border-radius: 1vh;
+  background-color: rgb(209, 236, 246);
+}
+
+.title{
+  width: 40%;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.info{
+  margin-top: 5vh;
+  align-self:flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

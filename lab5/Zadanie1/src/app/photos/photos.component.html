@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="photo" *ngFor="let photo of data.photos" [routerLink]="['/photo-view', photo]" >
+
+    <div class="aside">
+      <span class="title">{{photo.title}}</span>
+
+      <div class="info">
+        <span>{{"Album ID:" + photo.albumId }}</span>
+        <span>{{"Photo ID:" + photo.id }}</span>
+      </div>
+    </div>
+
+    <span>
+      <img src={{photo.thumbnailUrl}}>
+    </span>
+
+  </div>
+</div>

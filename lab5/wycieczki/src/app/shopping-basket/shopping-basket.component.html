@@ -1,9 +1,9 @@
 <div class="parent">
   <h1>Lista Zakupów</h1>
-<div *ngFor="let data of (getData() | getQuantity: 0)" class="orderDetails" >
-    <img src="{{ data.ImagePath }}" onerror="this.onerror=null; src='\\assets\\images\\No_image_available.png'" style="width: auto;height: 20vh; border-radius: 20px;" />
+<div *ngFor="let data of getData()" class="orderDetails" >
+    <!-- <img src="{{ data.ImagePath }}" onerror="this.onerror=null; src='\\assets\\images\\No_image_available.png'" style="width: auto;height: 20vh; border-radius: 20px;" /> -->
 
-    <div class="descr">
+    <!-- <div class="descr">
       <div>{{"Nazwa Wycieczki: " + data.name}}</div>
       <div>{{"Kraj:  " + data.country}}</div>
       <div>{{"Data Od: " + data.startDate}}</div>
@@ -11,7 +11,7 @@
     </div>
 
     <div style="font-size: x-large; font-weight: 900;">{{"Ilość:"  + (data.startQuantity - data.quantity)}}</div>
-    <div style="font-size: x-large; font-weight: 900;">{{"Koszt Całkowity: " + data.price* (data.startQuantity - data.quantity) + "zł"}}</div>
+    <div style="font-size: x-large; font-weight: 900;">{{"Koszt Całkowity: " + data.price* (data.startQuantity - data.quantity) + "zł"}}</div> -->
 </div>
 <div id="summary">
   {{"Łączny koszt: "+ getSum()+ " zł"}}
