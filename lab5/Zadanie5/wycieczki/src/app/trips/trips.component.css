@@ -1,0 +1,226 @@
+
+.container {
+    min-width: 100%;
+    /* background-color: rgba(255,202,123); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.trips-list {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.trip-card {
+    width: 15rem;
+    height: fit-content;
+    background-color: rgba(155,41,72);
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    color: white;
+    overflow: hidden;
+}
+
+.link {
+    height: 7rem;
+}
+
+.image {
+    text-align: center;
+    height: 100%;
+    /* background-color: 	rgba(255,114,81); */
+}
+
+img {
+    width: 80%;
+    height: 6rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+p {
+    padding: 0.3rem;
+    margin: 0;
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+}
+
+.name {
+    font-size: 20px;
+}
+
+.date, .des{
+    font-size: 14px;
+    padding-left: 1rem;
+}
+
+.amount {
+    font-size: 12px;
+}
+
+.desc {
+    text-align: center;
+}
+
+.bottom {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+}
+
+.lay {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price {
+    padding-left: 1rem;
+}
+
+.chan-amount {
+    display: flex;
+    flex-direction: row;
+    padding-right: 0.9rem;
+    gap: 0.2rem;
+}
+
+.amount {
+    align-self: flex-end;
+    padding: 0 1rem 0 0;
+}
+
+span {
+    cursor: pointer;
+}
+
+.btn1, .btn2 {
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.btn1:hover {
+    background-color: lime;
+}
+
+.btn2:hover {
+    background-color: tomato;
+}
+
+.noTicketsInfo {
+    justify-content: flex-start;
+    height: 2rem;
+}
+
+.lowNumberOfTrips {
+    padding: 0;
+    padding-bottom: 0.5rem;
+    margin: 0;
+    text-align: center;
+    color: tomato;
+}
+
+.expensive {
+    border: 5px solid lime;
+}
+
+.cheapest {
+    border: 5px solid tomato;
+}
+
+.btn-danger {
+    width: 90%;
+    align-self: center;
+    justify-content: flex-end;
+}
+
+.tripsCnt {
+    padding: 1rem;
+    text-align: center;
+    border-radius: 30px;
+}
+
+
+.lastTicketsInfo {
+    color: tomato;
+    text-align: center;
+}
+
+.raitings {
+    padding-left: 0.6rem;
+}
+
+.info {
+    width: 100%;
+    height: 20vh;
+    background-color: rgb(249, 191, 59);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    letter-spacing: 8px;
+}
+
+
+.basketInfo {
+    align-self: flex-end;
+    width: fit-content;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.btnBasket {
+    cursor: pointer;
+    border: none;
+    background-color: rgb(208, 0, 27);
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.btnContainer{
+    text-align: right;
+}
+
+.notifications {
+    position: relative;
+    left: 83%;
+    top: -7rem;
+}

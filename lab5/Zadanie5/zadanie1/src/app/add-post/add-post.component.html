@@ -1,0 +1,27 @@
+<p>
+    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Create new post
+    </button>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        <form [formGroup]="post">
+            <div class="mb-3">
+              <label class="form-label">Title</label>
+              <input type="text" class="form-control" placeholder="title" name="title" formControlName="postTitle">
+              <span *ngIf="formErrors.postTitle">{{ formErrors.postTitle }}</span>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Body</label>
+              <textarea type="text" class="form-control" placeholder="body" name="body" formControlName="postBody"></textarea>
+              <span *ngIf="formErrors.postBody">{{ formErrors.postBody }}</span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">UserId</label>
+                <input type="text" class="form-control" placeholder="userId" name="userId" formControlName="postUserId">
+                <span *ngIf="formErrors.postUserId">{{ formErrors.postUserId }}</span>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()">Add</button>
+        </form>
+    </div>
+</div>

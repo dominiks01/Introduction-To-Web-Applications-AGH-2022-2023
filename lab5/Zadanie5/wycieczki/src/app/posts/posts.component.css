@@ -1,0 +1,47 @@
+.main {
+    width: 100%;
+}
+
+.upper {
+    padding-top: 5%;
+    width: 100%;
+    text-align: center;
+}
+
+/* .add-post {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+} */
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.btn {
+    width: 80vw;
+    max-width: 50rem;
+    margin-bottom: 1rem;
+}
+
+.container-fluid {
+    width: 80vw;
+    max-width: 50rem;
+}
+
+#navbarNav {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+
+.add-form {
+    padding: 10%;
+    background-color: rgb(254, 196, 127);
+}
+
+.add-btn {
+    background-color: rgb(208, 0, 27)
+}

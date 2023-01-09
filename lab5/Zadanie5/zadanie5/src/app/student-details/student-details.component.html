@@ -1,0 +1,13 @@
+<div *ngIf="student" id="student" class="student">
+    <div>
+      <label>Imie: </label> {{student.name}} <input [(ngModel)]="modifing.name">
+    </div>
+    <div>
+      <label>Wiek: </label> {{student.age}} <input type="number" [(ngModel)]="modifing.age">
+    </div>
+   
+    <button class="button is-small btn-danger" (click)='deleteStudent()'>Delete</button>
+    <button class="button is-small btn-danger" (click)='updateStudent()'>Modify</button>
+  
+    <hr />
+  </div>

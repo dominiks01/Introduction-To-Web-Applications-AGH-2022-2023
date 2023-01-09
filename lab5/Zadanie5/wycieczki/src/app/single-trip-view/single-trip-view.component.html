@@ -1,0 +1,74 @@
+<div class="main" >
+    <div class="slider">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{{ trip?.imageLink1 }}" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+              <img src="{{ trip?.imageLink2 }}" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+              <img src="{{ trip?.imageLink3 }}" class="d-block w-100">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+    </div>
+    <div class="trip-card">
+      <div class="back">
+        <a routerLink="/trips"><span class="material-symbols-outlined">arrow_back</span></a>
+      </div>
+        <div class="card-header">
+            <p class="name">{{ trip?.name | uppercase }}</p>
+        </div>
+        <p class="des">kraj: {{ trip?.destination | uppercase}}</p>
+        <p class="date">
+            data: {{ trip?.startDate }} - {{ trip?.endDate }}
+        </p>
+        <p class="desc">{{ trip?.longDesc}}</p>
+        <div class="bottom">
+            <div class="lay">
+                <p class="price">{{ trip?.unitPrice | currency: actualCurrency}}</p>
+                <div class="chan-amount">
+                    <div class="add">
+                        <span *ngIf="trip!.maxQuantity > 0" class="material-symbols-outlined btn1" (click)="addingTickets()">add</span>
+                    </div>
+                    <div class="remove">
+                        <span class="material-symbols-outlined btn2" (click)="removingTickets()"> remove</span>
+                    </div>
+                    <div class="noTicketsInfo">
+                      <p *ngIf="trip!.maxQuantity == 0" class="lowNumberOfTrips">Brak biletów!</p>
+                      <p class="lowNumberOfTrips" *ngIf="trip!.maxQuantity < 4 && trip!.maxQuantity> 0">OSTATNIE MIEJSCA!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="amount">
+                <p class="cnt">ilość: {{trip?.maxQuantity}}</p>
+            </div>
+            <div class="raitings">
+                <div class="desc">
+                    <p class="cnt">ilosć ocen: {{ trip?.raitings }}</p>
+                    <p class="overall">ocena: {{ calculateRate() }}</p>
+                </div>
+                <app-trip-rating (rated)="raitingTrip($event)" [overallRate]="trip!.overallRate"
+                [raitings]="trip!.raitings" [tripToRate]="trip"></app-trip-rating>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="posts">
+  <app-display-posts [tripName]="trip!.name" ></app-display-posts>
+</div>

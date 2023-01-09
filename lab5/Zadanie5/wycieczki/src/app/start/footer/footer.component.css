@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    background-color: rgb(208, 0, 27);
+    width: 100%;
+    padding: 3rem;
+
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+.logo {
+    text-align: center;
+}
+
+@media (max-width: 1010px) {
+    .info {
+        flex-direction: column;
+        justify-content: center;
+    }
+}

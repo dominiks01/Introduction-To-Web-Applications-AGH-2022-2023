@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="info">
+        <h1>Lista wycieczek</h1>
+    </div>
+    <div class="filters">
+        <app-trip-filters></app-trip-filters>
+    </div>
+    <div class="trips-list">
+        <div class="trip-card" [ngClass]="{
+            'expensive': expensiveTrip(trip),
+            'cheapest': cheapestTrip(trip)
+        }" *ngFor="let trip of trips">
+            <div class="link">
+                <a routerLink="/trip-view/{{ trip.id }}">
+                    <div class="image">
+                        <img src={{trip.imageLink1}} alt="">
+                    </div>   
+                </a>
+                <div class="notifications">
+                    <app-notification [tripToPass]="trip"></app-notification>
+                </div>
+            </div>
+            <div class="card-header">
+                <p class="name">{{ trip.name | uppercase }}</p>
+            </div>
+            <p class="des">kraj: {{ trip.destination | uppercase}}</p>
+            <p class="date">
+                data: {{ trip.startDate }} - {{ trip.endDate }}
+            </p>
+            <p class="desc">{{ trip.shortDesc}}</p>
+            <div class="bottom">
+                <div class="lay">
+                    <p class="price">cena: {{ trip.unitPrice | currency: actualCurrency}}</p>
+                    <div class="chan-amount">
+                        <div class="add">
+                            <span *ngIf="trip.maxQuantity > 0" class="material-symbols-outlined btn1" (click)="addingTickets(trip)">add</span>
+                        </div>
+                        <div class="remove">
+                            <span class="material-symbols-outlined btn2" (click)="removingTickets(trip)"> remove</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="amount">
+                    <p class="cnt">ilość: {{trip.maxQuantity}}</p>
+                </div>
+                <!-- <div class="raitings">
+                    <app-trip-rating (rated)="raitingTrip(trip, $event)" [overallRate]="trip.overallRate"
+                    [raitings]="trip.raitings"></app-trip-rating>
+                </div> -->
+                <div class="noTicketsInfo">
+                    <p *ngIf="trip.maxQuantity == 0" class="lowNumberOfTrips">Brak biletów!</p>
+                    <p class="lowNumberOfTrips" *ngIf="trip.maxQuantity < 4 && trip.maxQuantity> 0">OSTATNIE MIEJSCA!</p>
+                </div>
+                <button type="button" class="btn btn-danger" (click)="deleteTrip(trip)">delete</button>
+            </div>
+        </div>
+    </div>
+    
+</div>

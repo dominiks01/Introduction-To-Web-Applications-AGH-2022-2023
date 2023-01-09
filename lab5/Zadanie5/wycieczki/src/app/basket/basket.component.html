@@ -1,0 +1,68 @@
+<!-- <div class="main" [routerLink]="['basket']" routerLinkActive="active"> -->
+<div class="main" [routerLink]="['/basket']" routerLinkActive="active">
+    <div class="info">
+        <h1>Koszyk</h1>
+    </div>
+    <div class="history-dir">
+        <button class="pos" [routerLink]="['/history']" routerLink="active">HISTORIA</button> 
+    </div>
+    <div class="el-container">
+        <div class="element-empty">
+            <div class="fakePhoto">
+                <!-- zdjęcie -->
+            </div>
+            <div class="tripInfo">
+                <div class="about">
+                    <div class="name con">
+                        <p class="item">nazwa</p>
+                    </div>
+                    <div class="price con">
+                        <p class="item">cena</p>
+                    </div>
+                    <div class="quantity con">
+                        <p class="item">ile rezerwacji</p>
+                    </div>
+                </div>
+                <div class="status">
+                    <div class="buy">
+                        
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="el-container">
+        <div class="element" *ngFor="let trip of basket">
+            <div class="photo">
+                <img src="{{ trip.imageLink1 }}" alt="">
+            </div>
+            <div class="tripInfo">
+                <div class="about">
+                    <div class="name con">
+                        <p class="item">{{trip.name}}</p>
+                    </div>
+                    <div class="price con">
+                        <p class="item">{{ trip.unitPrice | currency: acutalCurrency}}</p>
+                    </div>
+                    <div class="quantity con">
+                        <p class="item">{{ trip.reserved }}</p>
+                        <div class="change-qt">
+                            <span class="material-symbols-outlined btn1"  *ngIf="trip.maxQuantity > 0" (click)="addTrip(trip)">add</span>
+                            <span class="material-symbols-outlined btn2" (click)="substractTrip(trip)"> remove</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="editInfo">
+                    <div class="remove">
+                        <span class="material-symbols-outlined" (click)="deleteTrip(trip)">delete</span>
+                    </div>
+                    <div class="buy">
+                        <button type="button" class="btn btn-success" (click)="buyTrip(trip)">Kup Teraz</button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>

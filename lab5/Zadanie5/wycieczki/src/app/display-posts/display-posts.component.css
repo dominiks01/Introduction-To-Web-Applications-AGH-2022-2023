@@ -1,0 +1,40 @@
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.addPost {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.postList {
+    width: 100%;
+    text-align: left;
+    align-items: center;
+}
+
+.postContainer {
+    padding: 3rem 3rem 1rem 3rem;
+    margin: 3rem auto 3rem auto;
+    margin-top: 3rem;
+    width: 80%;
+    max-width: 50rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.header{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.bottom {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
