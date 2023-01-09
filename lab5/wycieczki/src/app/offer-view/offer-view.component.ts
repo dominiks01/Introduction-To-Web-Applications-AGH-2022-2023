@@ -7,7 +7,6 @@ import {
   faL,
 } from '@fortawesome/free-solid-svg-icons';
 import { DataService } from '../dataservice';
-import { elementAt, subscribeOn, take } from 'rxjs';
 
 
 @Component({
@@ -15,8 +14,7 @@ import { elementAt, subscribeOn, take } from 'rxjs';
   templateUrl: './offer-view.component.html',
   styleUrls: ['./offer-view.component.css'],
 })
-export class offerView implements OnInit, OnDestroy {
-  filtersLoaded: Promise<boolean> = Promise.resolve(false);
+export class offerView implements OnInit {
 
   constructor(public data: DataService) {
   }
@@ -26,8 +24,6 @@ export class offerView implements OnInit, OnDestroy {
   faShoppingBasket = faShoppingBasket;
   faFilter = faFilter;
 
-  ngOnDestroy() {}
-
   tripCounter: number = 0;
   showdiv3: boolean = false;
   minPrice: number = Infinity;
@@ -36,7 +32,6 @@ export class offerView implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.data.getTrips().subscribe(value => {
       this.trips = value;
-      this.filtersLoaded = Promise.resolve(true);
     });
 
     //this.trips.forEach(element => console.log(element));

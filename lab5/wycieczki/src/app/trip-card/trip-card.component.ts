@@ -31,7 +31,8 @@ export class TripCardComponent implements OnInit {
   isLoading: boolean = false;
 
   ngOnInit(): void {
-    this.getTrip();
+    //this.getTrip();
+    this.trip = this.data;
     this.isLoading = true;
 
     // this.trip = {
@@ -57,22 +58,19 @@ export class TripCardComponent implements OnInit {
     // });
   }
 
-  getTrip(){
-    let id = this.data['ID' as keyof object];
-    this.dataservice.getTrips().subscribe(
-      value => {
-        for(let i of value){
-          if(i['ID' as keyof object] == id){
-            this.trip = i;
-          }
-        }
-      }
-    )
-  }
+  // getTrip(){
+  //   let id = this.data['ID' as keyof object];
+  //   this.dataservice.getTrips().subscribe(
+  //     value => {
+  //       for(let i of value){
+  //         if(i['ID' as keyof object] == id){
+  //           this.trip = i;
+  //         }
+  //       }
+  //     }
+  //   )
+  // }
 
-  isLoaded(){
-    return !(this.trip === undefined)
-  }
 
   changeQuantity(value : any){
     let starting =  this.trip.available;
@@ -82,6 +80,8 @@ export class TripCardComponent implements OnInit {
 
     let newQuantity = this.trip.available + value;
     let newReserved = this.trip.reserved - value;
+
+    console.log(newReserved +" " + newQuantity);
 
     if(newQuantity > this.trip.quantity || newQuantity < 0 || newReserved < 0 || newReserved > this.trip.quantity)
       return

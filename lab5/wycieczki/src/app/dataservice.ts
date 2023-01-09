@@ -7,20 +7,23 @@ import { AngularFirestore, Query } from '@angular/fire/compat/firestore';
 })
 export class DataService {
   tripsRef = this.db.collection('trips');
+  history = this.db.collection('history');
+
   next!: number
   boughtID!: number
   trips: object[] = [];
   basket: any = {};
 
+  historyNext: number = 0;
+
   posts: any = [];
   postId: number = 0;
 
   constructor(private db: AngularFirestore) {
-    //this.tripsRef.get().subscribe(change =>{ this.next = change.size});
-    this.getTrips().subscribe(element =>{
-      for(let i of element)
-        this.trips.push(i);
-    });
+    this.trips = [];
+    this.history.get().subscribe(change =>{ this.historyNext = change.size});
+    this.resetData();
+
     this.posts.push({
       description: "ALamakotakALamakotakasdALamakotakasdasdALamakotakALamakotakasdALamakotakasdasdALamakotakALamakotakasdALamakotakasdasdALamakotakALamakotakasdALamakotakasdasd",
       id: 1,
@@ -29,13 +32,16 @@ export class DataService {
       tripName: "XDDDD",
       rating: 4
     })
-    console.log(this.posts);
   }
 
   public basketSum: number = 0;
 
   getTrips() : Observable<any>{
     return this.tripsRef.valueChanges()
+  }
+
+  getArray(){
+    return this.trips;
   }
 
   addTrip(trip: object){
@@ -80,7 +86,6 @@ export class DataService {
            available: json["trips"][i]['quantity'],
         }
 
-        console.log(nextTrip);
         this.addTrip(nextTrip);
       }
     });
@@ -97,4 +102,12 @@ export class DataService {
       this.basket[id] = 0;
     this.basket[id] -= value;
   }
+
+  bought(object:object){
+    console.log(object);
+    this.history.doc(this.historyNext+"").set({...object});
+    this.historyNext += 1;
+    this.updateQuantity(object['ID' as keyof object], object['quantity' as keyof object], 0);
+  }
+
 }
