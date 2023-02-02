@@ -56,7 +56,6 @@ export class ShoppingBasketComponent implements OnInit{
   }
 
   buyTrips(object:object){
-    console.log(object);
     this.dataservice.bought(object);
   }
 

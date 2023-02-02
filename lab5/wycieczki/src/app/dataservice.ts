@@ -23,15 +23,6 @@ export class DataService {
     this.trips = [];
     this.history.get().subscribe(change =>{ this.historyNext = change.size});
     this.resetData();
-
-    this.posts.push({
-      description: "ALamakotakALamakotakasdALamakotakasdasdALamakotakALamakotakasdALamakotakasdasdALamakotakALamakotakasdALamakotakasdasdALamakotakALamakotakasdALamakotakasdasd",
-      id: 1,
-      name: "Dominik",
-      startDate: "2023-01-07",
-      tripName: "XDDDD",
-      rating: 4
-    })
   }
 
   public basketSum: number = 0;

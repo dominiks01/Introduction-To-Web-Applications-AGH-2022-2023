@@ -1,0 +1,123 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 5vh repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 100%;
+  height: 100%;
+  }
+
+  .div1 { grid-area: 1 / 1 / 2 / 2; }
+  .div2 { grid-area: 1 / 2 / 2 / 3; }
+  .div3 { grid-area: 1 / 3 / 2 / 4; }
+  .div4 { grid-area: 1 / 4 / 2 / 5; }
+  .div5 { grid-area: 2 / 1 / 4 / 5; }
+
+.div2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  background-color: blanchedalmond;
+  min-width: 400px;
+}
+
+.div1, .div2, .div3, .div4{
+  background-color: rgb(45, 133, 133);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div2 > * {
+  padding-top: 30px;
+}
+
+.hideFilter{
+  height: 0;
+  visibility: hidden;
+}
+
+.div5 {
+  padding-top: 2vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 6vh;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.basket {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.basket fa-icon {
+  transform: translateY(-2px);
+  width: 3vh;
+}
+
+.basket div {
+  position: inherit;
+  right: 0;
+  font-size: 40px;
+}
+
+.div3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  height: 100%;
+  width: 100%;
+}
+
+.div3 p {
+  top:30px;
+  line-height: 20px;
+  width: 300px;
+  height:100%;
+}
+
+.tripCounerFirstBackground {
+  background-color: lightgreen;
+}
+
+.tripCounerSecondBackground {
+  background-color: lightcoral;
+}
+
+#formTrip{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#formTrip button {
+  height: 80%;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.filtr {
+  transform: translateY(10px);
+}

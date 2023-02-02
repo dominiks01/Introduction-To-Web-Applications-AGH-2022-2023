@@ -1,0 +1,50 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.parent{
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: aliceblue;
+  min-height: 92vh;
+}
+
+.orderDetails{
+  background-color:beige;
+  border: 1px solid black;
+  height: 25vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.descr{
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.descr * {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+#summary{
+  font-size: 35px;
+  font-weight: 900;
+}

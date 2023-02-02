@@ -1,0 +1,26 @@
+<div class="parent">
+  <div *ngFor="let data of getData()" class="orderDetails" ngClass="">
+    <img
+      src="{{ getImage(data) }}"
+      onerror="this.onerror=null; src='\\assets\\images\\No_image_available.png'"
+      style="width: auto; height: 20vh; border-radius: 20px"
+    />
+
+    <div class="descr">
+      <div>{{ "Nazwa Wycieczki: " + getName(data) }}</div>
+      <div>{{ "Kraj:  " + getCountry(data) }}</div>
+      <div>{{ "Data Od: " + getStartDate(data) }}</div>
+      <div>{{ "Data Do: " + getEndDate(data) }}</div>
+    </div>
+
+    <div>
+      {{ "Ilość:" + getReserved(data) }}<br>
+      {{ "Data Zakupu: " + getDateOfPurchase(data)}}
+    </div>
+
+    <div>
+      {{"STATUS: "}}<br>
+      {{getStatus(data)}}
+    </div>
+  </div>
+</div>

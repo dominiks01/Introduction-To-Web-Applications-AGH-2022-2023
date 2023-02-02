@@ -1,0 +1,13 @@
+<div class="main">
+  <div class="starIcons">
+    <fa-icon [icon]="faStar" class="postStarIcon" [ngClass]="{gold: isGold(1)}"></fa-icon>
+    <fa-icon [icon]="faStar" class="postStarIcon" [ngClass]="{gold: isGold(2)}"></fa-icon>
+    <fa-icon [icon]="faStar" class="postStarIcon" [ngClass]="{gold: isGold(3)}"></fa-icon>
+    <fa-icon [icon]="faStar" class="postStarIcon" [ngClass]="{gold: isGold(4)}"></fa-icon>
+    <fa-icon [icon]="faStar" class="postStarIcon" [ngClass]="{gold: isGold(5)}"></fa-icon>
+  </div>
+
+  <p class="tripName">{{"Wycieczka: " + tripName}}</p>
+  <p class="nick">{{"Nick: " + nick}}</p>
+  <p class="description">{{ description}}</p>
+</div>

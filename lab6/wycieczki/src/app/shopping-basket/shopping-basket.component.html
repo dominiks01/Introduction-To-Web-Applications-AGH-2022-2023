@@ -1,0 +1,21 @@
+<div class="parent">
+  <h1>Lista Zakupów</h1> <button type="button" routerLink="/history" class="btn btn-primary">Zobacz historię</button>
+<div *ngFor="let data of getData()" class="orderDetails" >
+    <img src="{{ getImage(data) }}" onerror="this.onerror=null; src='\\assets\\images\\No_image_available.png'" style="width: auto;height: 20vh; border-radius: 20px;" />
+
+    <div class="descr">
+      <div>{{"Nazwa Wycieczki: " +getName(data)}}</div>
+      <div>{{"Kraj:  " + getCountry(data)}}</div>
+      <div>{{"Data Od: " +getStartDate(data) }}</div>
+      <div>{{"Data Do: " +getEndDate(data)}}</div>
+    </div>
+
+    <div style="font-size: x-large; font-weight: 900;">{{"Ilość:"  + getReserved(data)}}</div>
+    <div style="font-size: x-large; font-weight: 900;">{{"Koszt Całkowity: " + getCost(data) + "zł"}}</div>
+    <button type="button" class="btn btn-success" (click)="buyTrips(data)">Kup Teraz</button>
+</div>
+<div id="summary">
+  {{"Łączny koszt: "+ getSum()+ " zł"}}
+</div>
+
+</div>

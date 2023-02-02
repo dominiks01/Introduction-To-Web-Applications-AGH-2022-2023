@@ -1,0 +1,66 @@
+<section class="vh-90 bg-image" style="margin-top: 1%;">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-90">
+      <div class="row d-flex justify-content-center align-items-center h-90">
+        <div class="col-12 col-md-1 col-lg-6 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-4">Create an account</h2>
+
+              <form [formGroup]="registerForm">
+                <div class="form-outline mb-3">
+                  <label class="form-label" for="firstName">Your First Name</label>
+                  <input type="text" id="firstName" class="form-control form-control-lg" formControlName="firstName" />
+                  <span *ngIf="formErrors.firstName"><div class="alert alert-danger" style="font-size:15px; height: 0.2vh; line-height: 0vh;" role="alert">
+                    <div>{{ formErrors.firstName }}</div>
+                  </div></span>
+                </div>
+
+                <div class="form-outline mb-3">
+                  <label class="form-label" for="secondName">Your Last Name</label>
+                  <input type="text" id="secondName" class="form-control form-control-lg" formControlName="secondName" />
+                  <span *ngIf="formErrors.secondName"><div class="alert alert-danger" style="font-size:15px; height: 0.2vh; line-height: 0vh;" role="alert">
+                    <div>{{ formErrors.secondName }}</div>
+                  </div></span>
+                </div>
+
+                <div class="form-outline mb-3">
+                  <label class="form-label" for="email">Your Email</label>
+                  <input type="email" id="email" class="form-control form-control-lg" formControlName="email" />
+                  <span *ngIf="formErrors.email"><div class="alert alert-danger" style="font-size:15px; height: 0.2vh; line-height: 0vh;" role="alert">
+                    <div>{{ formErrors.email }}</div>
+                  </div></span>
+                </div>
+
+                <div class="form-outline mb-3">
+                  <label class="form-label" for="password">Password</label>
+                  <input type="password" id="password" class="form-control form-control-lg" formControlName="password" />
+                  <span *ngIf="formErrors.password"><div class="alert alert-danger" style="font-size:15px; height: 0.2vh; line-height: 0vh;" role="alert">
+                    <div>{{ formErrors.password }}</div>
+                  </div></span>
+                </div>
+
+                <div class="form-outline mb-3">
+                  <label class="form-label" for="passwordRepeated">Repeat your password</label>
+                  <input type="password" id="passwordRepeated" class="form-control form-control-lg" formControlName="passwordRepeated" />
+                  <span *ngIf="formErrors.passwordRepeated"><div class="alert alert-danger"  style="font-size:15px; height: 0.2vh; line-height: 0vh;" role="alert">
+                    <div>{{ formErrors.passwordRepeated }}</div>
+                  </div></span>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="button" (click)="register()"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink="/login"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

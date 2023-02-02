@@ -1,0 +1,104 @@
+{
+  "trips": [
+    {
+      "name": "Nowa Zelandia",
+      "country": "Nowa Zelandia",
+      "startDate": "2022-12-24",
+      "endDate": "2023-01-05",
+      "price": "2000",
+      "quantity": 20,
+      "ImagePath": "\\assets\\images\\NowaZelandia.png",
+      "description": "New Zealand's South Island brims with majestic landscapes at every turn, from dramatic mountains to spectacular fjords. Here, you can admire the mountains of Fiordland National Park, a UNESCO World Heritage Site, from hiking trails or a boat on Milford Sound"
+    },
+    {
+      "name": "Paryż",
+      "country": "Francja",
+      "startDate": "2023-01-01",
+      "endDate": "2023-02-06",
+      "price": "5000",
+      "quantity": 5,
+      "ImagePath": "\\assets\\images\\Paryż.png",
+      "description": "The magnetic City of Light draws visitors from around the globe who come to see iconic attractions like the Eiffel Tower, the Louvre and the Arc de Triomphe"
+    },
+    {
+      "name": "Maui",
+      "country": "Stany Zjednoczone",
+      "startDate": "2024-04-23",
+      "endDate": "2024-04-24",
+      "price": "7000",
+      "quantity": 10,
+      "ImagePath": "\\assets\\images\\Maui.png",
+      "description": "Whether you're driving along the Road to Hana, enjoying a bird's-eye view of Maui's lush coastline from a helicopter, snorkeling with sea turtles or simply relaxing on white or black sand beaches, you'll find that this Hawaiian island is unlike any other tropical destination."
+    },
+    {
+      "name": "Bora Bora",
+      "country": "Francja",
+      "startDate": "2022-08-17",
+      "endDate": "2022-09-01",
+      "price": "4000",
+      "quantity": 40,
+      "ImagePath": "\\assets\\images\\BoraBora.png",
+      "description": "What this small French Polynesian island may lack in size it makes up for in sheer tropical beauty. Here, you'll find picturesque beaches, lush jungles and luxurious resorts. "
+    },
+    {
+      "name": "Tahiti",
+      "country": "Francja",
+      "startDate": "2022-08-20",
+      "endDate": "2022-08-21",
+      "price": "5000",
+      "quantity": 6,
+      "ImagePath": "\\assets\\images\\Tahiti.png",
+      "description":"Travel to this island – the largest in French Polynesia – if you've been dreaming of a vacation spent lazing in a lavish overwater bungalow."
+    },
+    {
+      "name": "Londyn",
+      "country": "Wielka Brytania",
+      "startDate": "2022-09-21",
+      "endDate": "2022-09-25",
+      "price": "2000",
+      "quantity": 18,
+      "ImagePath": "\\assets\\images\\Londyn.png",
+      "description": "London is a world unto itself. The eclectic neighborhoods, which are home to a blend of historical landmarks and modern-day attractions, can keep you occupied for days."
+    },
+    {
+      "name": "Rzym",
+      "country": "Włochy",
+      "startDate": "2022-01-05",
+      "endDate": "2022-01-09",
+      "price": "1000",
+      "quantity": 21,
+      "ImagePath": "\\assets\\images\\Rome.png",
+      "description":"When you visit the Eternal City, prepare to cross a few must-see attractions – including the Colosseum, the Trevi Fountain and the Pantheon – off of your bucket list"
+    },
+    {
+      "name": "Tokio",
+      "country": "Japonia",
+      "startDate": "12-05-2022",
+      "endDate": "20-05-2022",
+      "price": "5000",
+      "quantity": 23,
+      "ImagePath": "\\assets\\images\\Tokio.png",
+      "description": "Located north of the Dominican Republic, this collection of roughly 100 islands and cays is popular with honeymooners – and for good reason"
+    },
+    {
+      "name": "Kraków",
+      "country": "Polska",
+      "startDate": "2022-07-13",
+      "endDate": "2022-07-15",
+      "price": "100",
+      "quantity": 60,
+      "ImagePath": "\\assets\\images\\Kraków.png",
+      "description": "Kraków is the second largest and one of the oldest cities in Poland. Situated on the Vistula River in the Lesser Poland region, the city dates back to the 7th century."
+    },
+    {
+      "name": "Warszawa",
+      "country": "Polska",
+      "startDate": "2022-07-13",
+      "endDate": "2022-07-15",
+      "price": "200",
+      "quantity": 20,
+      "ImagePath": "\\assets\\images\\Warszawa.png",
+      "description": "Warsaw is a mixture of relaxing green spaces, historic sites and vivid modernity. Discover the charming Old Town, Wilanów Palace and amazing Lazienki Park, where you can watch free Chopin concerts every Sunday during the summer."
+    }
+  ]
+}

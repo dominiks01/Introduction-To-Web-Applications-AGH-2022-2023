@@ -1,0 +1,64 @@
+<header>
+  <nav>
+    <div id="logo">
+      <h1>LOGO</h1>
+    </div>
+
+    <label class="menu-button-container" for="check">
+      <div class="navContainer">
+      <ul class="navOption">
+        <li><a [routerLink]="['/home']" routerLinkActive="router-link-active">HOME</a></li>
+        <li><a [routerLink]="['/offer-view']" routerLinkActive="router-link-active">OFERTA</a></li>
+        <li><a [routerLink]="['/shopping-basket']" routerLinkActive="router-link-active">BASKET</a></li>
+
+        <li *ngIf="AccountDataService.ifLogged && (isAdmin() || isManager())"><a style="color: red;" [routerLink]="['/admin-view']" routerLinkActive="router-link-active">Admin View</a></li>
+        <li *ngIf="AccountDataService.ifLogged && isManager()"><a [routerLink]="['/trip-manager']" routerLinkActive="router-link-active">Trip Manager</a></li>
+
+      </ul>
+      <ul class="navOption2">
+        <li  *ngIf="!AccountDataService.ifLogged"><a [routerLink]="['/register']" routerLinkActive="router-link-active">Zarejestruj</a></li>
+        <li  *ngIf="AccountDataService.ifLogged"><a style="color: azure;">{{getName()}}</a></li>
+
+        <li  *ngIf="!AccountDataService.ifLogged"><a [routerLink]="['/login']" style="color: antiquewhite;" routerLinkActive="router-link-active">ZALOGUJ</a></li>
+        <li  *ngIf="AccountDataService.ifLogged"><a clickable (click)="signOut()">WYLOGUJ</a></li>
+
+      </ul>
+    </div>
+    </label>
+
+    <!-- <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle btn-block custom" type="button" id="dropdownMenu2" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <span *ngIf="AccountDataService.ifLogged">{{ getName() }}</span>
+        <span *ngIf="!AccountDataService.ifLogged">Menu użytkownika</span>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item btn btn-secondary btn-lg" routerLinkActive="active"
+            *ngIf="AccountDataService.ifLogged">
+            {{ "Account" }}
+          </a></li>
+          <li><a class="dropdown-item btn btn-secondary btn-lg" routerLinkActive="active"
+            *ngIf="AccountDataService.ifLogged">
+            {{ AccountDataService.loggedUser }}
+          </a></li>
+        <li><a class="dropdown-item btn btn-secondary btn-l" routerLink="./register" routerLinkActive="active"
+            *ngIf="!AccountDataService.ifLogged">
+            Zarejestruj
+          </a></li>
+
+        <li><a class="dropdown-item btn btn-secondary btn-l" routerLink="./admin-view" routerLinkActive="active"
+            *ngIf="isAdmin()">
+            Przejdź do wikoku admina
+         </a></li>
+
+        <li><a class="dropdown-item btn btn-secondary btn-l" routerLink="./login" routerLinkActive="active"
+            *ngIf="!AccountDataService.ifLogged">
+            Zaloguj
+          </a></li>
+          <div class="dropdown-divider"></div>
+        <li><a class="dropdown-item btn btn-secondary btn-l" *ngIf="AccountDataService.ifLogged" clickable (click)="signOut()" >Wyloguj</a></li>
+      </div>
+    </div> -->
+  </nav>
+</header>
+<router-outlet></router-outlet>

@@ -1,0 +1,38 @@
+<div class="parent" >
+  <div class="div1">
+    <div class="filtr" (click)="showFilter()" style="transform: translateY(-2px);">
+      <fa-icon [icon]="faFilter" id="icond" transform="shrink--15"></fa-icon>
+    </div>
+  </div>
+
+  <div class="div2">
+    <div class="basket">
+      <fa-icon clickable [routerLink]="['/shopping-basket']" [icon]="faShoppingBasket" id="icond" transform="shrink--15" ></fa-icon>
+      <div style="transform: translateY(-15px);">{{ "   " + getSum() + " zł" }}</div>
+    </div>
+  </div>
+
+  <div class="div3">
+    <div class="alert alert-danger" role="alert" [ngClass]="{ tripCounerSecondBackground: tripCounter < 10,
+                                          tripCounerFirstBackground: tripCounter >= 10 }">
+      <p >{{ "Liczba zarezerwowanych wycieczek: " + countTrips() }}</p>
+    </div>
+  </div>
+
+  <div class="div4">
+    <div id="formTrip">
+      <button class="newTripButton" [routerLink]="['/new-trip']">Dodaj nową wycieczkę</button >
+    </div>
+  </div>
+
+  <div class="div5">
+   <ng-container *ngFor="let data of trips" class="container">
+      <app-trip-card  (sumEmiter)="receiveMessage($event)" (tripEmiter)="tripDelete($event)"
+                      [data]="data"
+                      [cheapest]="checkCheapest(data)"
+                      [mostExpensive]="checkMostExpenssive(data)"
+    >
+    </app-trip-card>
+    </ng-container>
+  </div>
+</div>

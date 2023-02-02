@@ -1,0 +1,38 @@
+<div [ngClass]="{
+    cityContainer: true,
+    cheapest: cheapest,
+    mostExpensive: mostExpensive,
+    cityOutContainer: isOutOfOrder()}">
+  <div>
+
+    <img src="{{ trip?.ImagePath }}" onerror="this.onerror=null; src='\\assets\\images\\No_image_available.png'"
+      (click)="goToInfo()"
+    />
+
+    <h1>{{ trip?.name }}</h1>
+    <h2>{{ trip?.country }}</h2>
+
+    <div class="ratingsAverage">
+      {{ "Średnia ocen wycieczki: " + getAverage() }}
+    </div>
+
+    <p>
+      {{ "Data rozpoczęcia: " + trip?.startDate }} <br />
+      {{ "Data zakończenia: " + trip?.endDate }} <br />
+      {{ "Cena: " + trip?.price }}<br />
+    </p>
+
+    <div class="controls">
+      <button id="remove" type="button" clickable (click)="removeTrip()">
+        <fa-icon [icon]="faTrash" id="icond"></fa-icon>
+      </button>
+
+      <div class="quantityInfo">
+        <button type="button" class="rounded-circle" (click)="changeQuantity(-1)">+</button>
+        {{ trip?.available }}
+        <button type="button" class="rounded-circle" (click)="changeQuantity(1)">-</button>
+      </div>
+
+    </div>
+  </div>
+</div>
