@@ -1,0 +1,23 @@
+.list-style {
+  margin-right: 0;
+  list-style-type: none;
+}
+
+.navbar-nav .show  .nav-link, .navbar-nav .nav-link, .nav-link, .text-info{
+  text-align: center;
+}
+
+.dropdown-menu.show{
+  display: block;
+  left: -10px;
+}
+
+.dropdown-link, .dropdown-item , .dropdown-toggle{
+  padding: 10px;
+}
+
+@media (max-width: 992px){
+  .dropdown-menu.show{
+    display: contents;
+  }
+}

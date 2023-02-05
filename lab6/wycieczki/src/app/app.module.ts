@@ -22,7 +22,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environment/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { MainViewComponent } from './main-view/main-view.component';
-import { GoogleMapsModule } from '@angular/google-maps';
 import { TripInfoComponent } from './trip-info/trip-info.component';
 import { PostComponent } from './post/post.component';
 import { HistoryComponent } from './history/history.component';
@@ -30,6 +29,8 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AdminConsoleComponent } from './admin-console/admin-console.component';
 import { TripManagerComponent } from './trip-manager/trip-manager.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { TripManagerComponent } from './trip-manager/trip-manager.component';
     RegisterComponent,
     LoginComponent,
     AdminConsoleComponent,
-    TripManagerComponent
+    TripManagerComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,8 @@ import { TripManagerComponent } from './trip-manager/trip-manager.component';
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  providers: [ DataService],
+  providers: [ DataService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule{
